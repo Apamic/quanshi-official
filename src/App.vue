@@ -12,4 +12,8 @@ export default {
 
 <style lang="less">
   @import "./style/base.less";
+  @import "./style/style.css";
+  .el-carousel__arrow {
+    display: none !important;
+  }
 </style>

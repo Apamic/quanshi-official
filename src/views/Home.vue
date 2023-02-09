@@ -2,94 +2,278 @@
     <div class="page">
         <!-- 电脑端 -->
         <div class="hidden-sm-and-down">
-            <!-- 头部导航部分 -->
-            <div class="headerVue" :style="{background:current%2===0?'rgba(0,0,0,0.3)':'rgba(255,255,255,0.3)'}">
-                <div class="header">
-                    <div class="navVue">
-                        <img src="../assets/logo.jpg" @click="setActiveItem(0)">
-                        <div class="navBox">
-                            <div class="nav" 
-                                v-for="(item,index) in navs" :key="index" 
-                                :class="{active:current===index,color:current%2===0}" 
-                                @click="setActiveItem(index)"
-                            >{{item}}</div>
-                        </div>
-                    </div>
-                    <div class="oprationVue">
-                        <div class="scan" @mouseover="isScan = true" @mouseleave="isScan = false">
-                            <img src="../assets/erweima.png"/>
-                            <span>扫码咨询</span>
-                            <div class="codeVue" v-if="isScan">
-                                <img src="../assets/code.png">
-                            </div>
-                        </div>
-                        <div class="line" :style="{background:current%2===0?'#666':'#ddd'}"></div>
-                        <h4 @click="isLoginVue = true" :class="{active:current===index,color:current%2===0}" v-if="isLogin">登录/注册</h4>
-                        <div class="user el-icon-user" :class="{active:current===index,color:current%2===0}" v-else @click="navigite()"></div>
-                    </div>
-                </div>
-            </div>
+            <HeaderVue :background="background" :current="current" :color="color" :logo="logo" :activeColor="activeColor">
+            </HeaderVue>
             <!-- body轮播组件 -->
             <div class="container-swiper">
-                <el-carousel height="100vh" direction="vertical" :loop="false" :autoplay="false" ref="carousel" :initial-index="current" @setActiveItem="setActiveItem" indicator-position="none">
+                <el-carousel height="100vh" direction="vertical" :loop="false" :autoplay="false" ref="carousel"
+                    :initial-index="current" @setActiveItem="setActiveItem" indicator-position="none">
+                    <!-- 首页 -->
                     <el-carousel-item name="0">
                         <div class="homeVue">
-                            <div class="content" v-if="current===0">
-                                <div class="name">直播数字人</div>
-                                <div class="btn">立即体验</div>
+                            <div class="home" v-if="current === 0">
+                                <div style="height: 100px;"></div>
+                                <div class="content">
+                                    <div class="inner">
+                                        <div class="name">全视AI直播数字人</div>
+                                        <div class="desc">专业带货数字人 一站式解决方案</div>
+                                        <div class="btnVue">
+                                            <div class="btn">
+                                                <span>立即体验</span>
+                                                <img src="../assets/more.png" alt="">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </el-carousel-item>
+
+                    <!-- 产品介绍 -->
                     <el-carousel-item name="1">
                         <div class="productVue">
-                            <div class="content" v-if="current===1">
-                                <div class="name">直播数字人</div>
-                                <div class="btn">立即体验</div>
+                            <div class="content" v-if="current === 1">
+                                <div style="height: 100px;"></div>
+                                <div class="content">
+                                    <div class="inner">
+                                        <div class="title">永不下播,降本增效</div>
+                                        <div class="tabVue">
+                                            <div class="tabs">
+                                                <div class="tab" v-for="(item,index) in tabs" :key="index" 
+                                                :class="{active:son===index}"
+                                                @click="son=index"
+                                                >{{item}}</div>
+                                            </div> 
+                                        </div>
+                                        <template>
+                                            <div class="sonVue" v-show="son===0">
+                                                <div class="sonLeft">
+                                                    <div class="name">虚拟AI直播数字人</div>  
+                                                    <div class="name" style="padding-bottom: 50px;">一键打造你的数字分身</div>
+                                                    <div class="caseVue">
+                                                        <div class="case"><span>商品讲解：</span> 文本输入，讲解一字不差</div>
+                                                    </div>
+                                                    <div class="caseVue flex-end">
+                                                        <div class="case" style="border:1px solid #E75219"><span>智能交互：</span>抓取评论，智能回复问题</div>
+                                                    </div>
+                                                    <div class="caseVue">
+                                                        <div class="case"><span>超长直播：</span>随时随地，24h想开就开</div>
+                                                    </div>
+                                                    <div class="caseVue flex-center">
+                                                        <div class="case" style="border:1px solid #5D1882"><span>降本增效：</span>一台电脑无人直播模式</div>
+                                                    </div>
+                                                    
+                                                    <div class="btnVue">
+                                                        <div class="btn">
+                                                            <span>了解一下</span>
+                                                            <img src="../assets/more.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="sonRignt">
+                                                    <el-carousel :interval="3000" type="card" height="500px" class="elCarousel" indicator-position="none">
+                                                        <el-carousel-item>
+                                                            <img src="../assets/1.png" alt="">
+                                                        </el-carousel-item>
+                                                        <el-carousel-item>
+                                                            <img src="../assets/2.png" alt="">
+                                                        </el-carousel-item>
+                                                        <el-carousel-item>
+                                                            <img src="../assets/3.png" alt="">
+                                                        </el-carousel-item>
+                                                    </el-carousel>
+                                                </div>
+                                            </div>
+                                            <div class="sonVue" v-show="son===1">111</div>
+                                            <div class="sonVue" v-show="son===2">222</div>
+                                            <div class="sonVue" v-show="son===3">333</div>
+                                        </template>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </el-carousel-item>
+
+                    <!-- 形象定制 -->
                     <el-carousel-item name="2">
                         <div class="costomVue">
-                            <div class="content" v-if="current===2">
-                                <div class="name">直播数字人</div>
-                                <div class="btn">立即体验</div>
+                            <div class="costom" v-if="current === 2">
+                                <div style="height: 100px;"></div>
+                                <div class="content">
+                                    <div class="content">
+                                        <div class="title">形象定制</div>
+                                        <div class="inner flex-between align-center">
+                                            <div class="innerLeft">
+                                                <div class="vedioVue"></div>
+                                                <div class="scrollVue flex-between align-center">
+                                                    <img src="../assets/left.png" @click="arrowClick('prev')">
+                                                    <el-carousel indicator-position="none" height="110px" :autoplay="false" class="elCarousel" ref="carouselCostom">
+                                                        <el-carousel-item v-for="item in 4" :key="item">
+                                                            <div class="imgs flex-between">
+                                                                <img src="../assets/4.png" v-for="(item,index) in 4">
+                                                            </div>
+                                                        </el-carousel-item>
+                                                    </el-carousel>
+                                                    <img src="../assets/right.png" @click="arrowClick('next')">
+                                                </div>
+                                            </div>
+                                            <div class="innerRight">
+                                                <div class="name">数字人形象自定义</div>
+                                                <div class="name" style="padding-bottom:80px">服装场景任意配</div>
+                                                <p>200+五官变形维度，自助捏脸</p>
+                                                <p>人物形象高度自定义</p>
+                                                <p>1000+组合方式，服装、场景、玩法随意搭配</p>
+                                                <div class="flex-end">
+                                                    <div class="btnVue">
+                                                        <div class="btn">
+                                                            <span>立即体验</span>
+                                                            <img src="../assets/more.png">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </el-carousel-item>
+
+                    <!-- 会员中心 -->
                     <el-carousel-item name="3">
                         <div class="vipVue">
-                            <div class="content" v-if="current===3">
-                                <div class="name">直播数字人</div>
-                                <div class="btn">立即体验</div>
+                            <div class="vip" v-if="current === 3">
+                                <div style="height: 100px;"></div>
+                                <div class="content">
+                                    <div class="inner">
+                                        <div class="title">买全视数字科技会员·享专属特权</div>
+                                        <p>一键生成视频·人物素材丰富·海量场景资源·顶级配音神器</p>
+                                        <div class="box">
+                                            <div class="priceVue">
+                                                <span>￥</span>
+                                                <p>1299</p>
+                                                <span>/月</span>
+                                                <img src="../assets/king.png" alt="">
+                                            </div>
+                                            <div class="liVue">
+                                                <div class="li">
+                                                    <img src="../assets/dot.png" alt="">
+                                                    <p>虚拟数字人1个<span>(多选一)</span></p>
+                                                </div>
+                                                <div class="li">
+                                                    <img src="../assets/dot.png" alt="">
+                                                    <p>数字人直播平台</p>
+                                                </div>
+                                                <div class="li">
+                                                    <img src="../assets/dot.png" alt="">
+                                                    <p>数字人合成后台</p>
+                                                </div>
+                                                <div class="li">
+                                                    <img src="../assets/dot.png" alt="">
+                                                    <p>专属数字人直播培训</p>
+                                                </div>
+                                            </div>
+                                            <div class="btnVue">
+                                                <div class="btn">
+                                                    <span>立即体验</span>
+                                                    <img src="../assets/more.png">
+                                                </div>
+                                            </div>
+                                            <img src="../assets/hands.png" class="hands">
+                                        </div>
+                                        <h5>为什么要选择购买会员？</h5>
+                                        <div class="p">一个套餐，解决数字人直播的多元需求，为主播实现数字人分身，为直播企业降本增效。</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </el-carousel-item>
+
+                    <!-- 伙伴计划 -->
                     <el-carousel-item name="4">
                         <div class="partnerVue">
-                            <div class="content" v-if="current===4">
-                                <div class="name">直播数字人</div>
-                                <div class="btn">立即体验</div>
+                            <div class="partner" v-if="current === 4">
+                                <div style="height: 100px;"></div>
+                                <div class="content">
+                                    <div class="inner">
+                                        <div class="title">合作伙伴计划</div>
+                                        <div class="main">
+                                            <h6>免费领取ip元分身-数智人</h6>
+                                            <div class="box">
+                                                <div class="sonVue">
+                                                    <h3>伙伴权益说明：</h3>
+                                                    <div class="li flex align-center">
+                                                        <img src="../assets/icon1.png" alt="">
+                                                        <p>全视直播伙伴表示</p>
+                                                    </div>
+                                                    <div class="li flex align-center">
+                                                        <img src="../assets/icon2.png" alt="">
+                                                        <p>短视频合成不限时</p>
+                                                    </div>
+                                                    <div class="li flex align-center">
+                                                        <img src="../assets/icon3.png" alt="">
+                                                        <p>免费运营工具库</p>
+                                                    </div>
+                                                    <div class="li flex align-center">
+                                                        <img src="../assets/icon4.png" alt="">
+                                                        <p>免费直播模板库</p>
+                                                    </div>
+                                                    <div class="tip">注：渠道合作5000起，具体咨询招商经理。要成为公司渠道合伙人必须要先体验和使用公司数字人产品。</div>
+                                                    <div class="btns">
+                                                        <div class="btn">福利</div>
+                                                        <div class="btn">权益</div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="btnVue">
+                                                <div class="btn">
+                                                    <span>申请加入</span>
+                                                    <img src="../assets/more.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </el-carousel-item>
+
+                    <!-- 关于我们 -->
                     <el-carousel-item name="5">
                         <div class="aboutVue">
-                            <div class="content" v-if="current===5">
+                            <div class="content" v-if="current === 5">
                                 <h2>公司介绍</h2>
-                                <p>武汉全视数字科技有限公司，是一家专业、专注研发AI直播数字人软、硬件的高新科技企业。公司为企业用户提供AI直播数字人定制、基础运营服务、以及电商直播全套落地解决方案。公司依托博鳌全球数字经济峰会、蚂蚁链产业创新中心等优势资源。为用户从宏观战略到微观落地执行，提供全面、专业、细致的服务。</p>
+                                <p>武汉全视数字科技有限公司，是一家专业、专注研发AI直播数字人软、硬件的高新科技企业。公司为企业用户提供AI直播数字人定制、基础运营服务、以及电商直播全套落地解决方案。公司依托博鳌全球数字经济峰会、蚂蚁链产业创新中心等优势资源。为用户从宏观战略到微观落地执行，提供全面、专业、细致的服务。
+                                </p>
                                 <div class="friends">
                                     <div class="title">合作伙伴</div>
                                 </div>
+                                <!-- <div class="footer" v-if="isFooter"></div> -->
+                            </div>
+                        </div>
+                    </el-carousel-item>
+
+                    <el-carousel-item name="6">
+                        <div class="footerVue">
+                            <div class="content" v-if="current === 6">
+                                <div class="caseVue"></div>
                             </div>
                         </div>
                     </el-carousel-item>
                 </el-carousel>
             </div>
-            <!-- 登录弹框 -->
-            <div class="mask" v-if="isLoginVue">
-                <div class="loginVue">
-                    <div class="login">
-                        <div class="close" @click="isLoginVue = false">
+
+
+
+
+
+            <!-- 申请加入弹框 -->
+            <div class="joinmask" v-if="isJoin">
+                <div class="joinVue">
+                    <div class="join">
+                        <div class="close" @click="isJoin = false">
                             <img src="../assets/close.png">
                         </div>
                     </div>
@@ -97,62 +281,201 @@
             </div>
         </div>
 
-        <!-- ============================================================================================================================================================ -->
+        <!-- ========================================================================================================================================================= -->
 
         <!-- 移动端 -->
-        <div class="hidden-md-and-up"></div>
+        <div class="hidden-md-and-up">
+            移动端暂未适配
+        </div>
     </div>
 </template>
 
 <script>
-    import { debounce } from '@/utils/index'
-    import { mapState } from "vuex"
-    export default {
-        data(){
-            return {
-                current: 0,
-                isScan: false,
-                isLoginVue: false,
-                navs: ["首页","产品介绍","形象定制","会员中心","伙伴计划","关于我们"],
+import HeaderVue from '@/components/HeaderVue.vue'
+import { debounce } from '@/utils/index'
+
+export default {
+    data() {
+        return {
+            current: 0,
+            isJoin: false,
+            isFooter: false,
+            background: "#0C121D",
+            color: "#fff",
+            tabs: ["AI直播","量身定制","精准捕捉","基础/全案代运营"],
+            son: 0,
+            logo: "light",
+            activeColor: "#02A7A0"
+        }
+    },
+    created() {
+        
+    },
+    mounted() {
+        window.addEventListener('mousewheel', debounce(this.handleScroll), false)
+        window.addEventListener('DOMMouseScroll', debounce(this.handleScroll), false)
+    },
+    components: {
+        HeaderVue
+    },
+    methods: {
+        handleScroll(e) {
+            //console.log(e.deltaY)  // 正值为向下滚动，负值为向上滚动
+            console.log(this.$children[0],this.current)
+            if (this.$children[0].isLoginVue) return
+            if (this.isJoin) return
+            if (e.deltaY > 0) {
+                if (this.current === 6) return
+                this.current++
+                console.log(this.current,'kkkk')
+                this.$refs.carousel.setActiveItem(this.current);
+                switch (this.current) {
+                    case 0:
+                        this.background = "#0C121D";
+                        this.color = "#fff"
+                        this.logo = "light"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 1:
+                        this.background = "rgba(0,0,0,0.01)";
+                        this.color = "#666"
+                        this.logo = "dark"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 2:
+                        this.background = "#0C121D";
+                        this.color = "#fff"
+                        this.logo = "light"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 3:
+                        this.background = "rgba(0,0,0,0.01)";
+                        this.color = "#666"
+                        this.logo = "dark"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 4:
+                        this.background = "rgba(0,0,0,0.1)";
+                        this.color = "#fff"
+                        this.logo = "light"
+                        // this.activeColor = "#DFB685"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 5:
+                        this.background = "rgba(0,0,0,0.01)";
+                        this.color = "#666"
+                        this.logo = "dark"
+                        this.activeColor = "#02A7A0"
+                        break;
+                }
+                console.log(this.background)
+                
+            } else {
+                if (this.current === 0) return
+                
+                this.current--
+                console.log(this.current,'kkkk')
+                this.$refs.carousel.setActiveItem(this.current);
+                switch (this.current) {
+                    case 0:
+                        this.background = "#0C121D";
+                        this.color = "#fff"
+                        this.logo = "light"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 1:
+                        this.background = "rgba(0,0,0,0.01)";
+                        this.color = "#666"
+                        this.logo = "dark"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 2:
+                        this.background = "#0C121D";
+                        this.color = "#fff"
+                        this.logo = "light"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 3:
+                        this.background = "rgba(0,0,0,0.01)";
+                        this.color = "#666"
+                        this.logo = "dark"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 4:
+                        this.background = "rgba(0,0,0,0.1)";
+                        this.color = "#fff"
+                        this.logo = "light"
+                        // this.activeColor = "#DFB685"
+                        this.activeColor = "#02A7A0"
+                        break;
+                    case 5:
+                        this.background = "rgba(0,0,0,0.01)";
+                        this.color = "#666"
+                        this.logo = "dark"
+                        this.activeColor = "#02A7A0"
+                        break;
+                }
+                
             }
         },
-        mounted() {
-            window.addEventListener('mousewheel', debounce(this.handleScroll), false)
-            window.addEventListener('DOMMouseScroll', debounce(this.handleScroll), false)
+        setActiveItem(index) {
+            if (this.current === index) return
+            console.log(this.color)
+            this.current = index
+            this.$refs.carousel.setActiveItem(index)
+            switch (index) {
+                case 0:
+                    this.background = "#0C121D";
+                    this.color = "#fff"
+                    this.logo = "light"
+                    this.activeColor = "#02A7A0"
+                     break;
+                 case 1:
+                    this.background = "rgba(0,0,0,0.01)";
+                    this.color = "#666"
+                    this.logo = "dark"
+                    this.activeColor = "#02A7A0"
+                    break;
+                case 2:
+                    this.background = "#0C121D";
+                    this.color = "#fff"
+                    this.logo = "light"
+                    this.activeColor = "#02A7A0"
+                    break;   
+                case 3:
+                    this.background = "rgba(0,0,0,0.01)";
+                    this.color = "#666"
+                    this.logo = "dark"
+                    this.activeColor = "#02A7A0"
+                    break; 
+                case 4:
+                    this.background = "rgba(0,0,0,0.1)";
+                    this.color = "#fff"
+                    this.logo = "light"
+                    // this.activeColor = "#DFB685"
+                    this.activeColor = "#02A7A0"
+                    break;
+                case 5:
+                    this.background = "rgba(0,0,0,0.01)";
+                    this.color = "#666"
+                    this.logo = "dark"
+                    this.activeColor = "#02A7A0"
+                    break;
+            }
         },
-        computed:{
-			...mapState({
-			    isLogin: (state) => state.isLogin
-			}),				
-		},
-        methods: {
-            handleScroll(e) {
-                console.log(e.deltaY)  // 正值为向下滚动，负值为向上滚动
-                if(this.isLoginVue) return
-                if(e.deltaY>0) {
-                    if(this.current===5) return
-                    this.current++
-                    console.log(this.current)
-                    this.$refs.carousel.setActiveItem(this.current);
-                }else {
-                    if(this.current===0) return
-                    this.current--
-                    this.$refs.carousel.setActiveItem(this.current);
-                }
-            },
-            setActiveItem(index){
-                if(this.current===index) return
-                this.current = index
-                this.$refs.carousel.setActiveItem(index)
-            },
-            navigite(){
-                this.$router.push("./room")
+        arrowClick(value){
+            console.log(value)
+            if(value === 'next') {
+                this.$refs.carouselCostom.next()
+            } else {
+                this.$refs.carouselCostom.prev()
             }
         }
     }
+}
 </script>
 
 <style lang="less" scoped>
-    @import "../style/pc.less";
-    @import "../style/ph.less";
+@import "../style/pc.less";
+@import "../style/ph.less";
 </style>

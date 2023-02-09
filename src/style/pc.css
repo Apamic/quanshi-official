@@ -1,119 +1,3 @@
-.headerVue {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 999;
-}
-.headerVue .header {
-  height: 60px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-}
-.headerVue .header .navVue {
-  display: flex;
-  align-items: center;
-}
-.headerVue .header .navVue img {
-  width: 140px;
-  height: 36px;
-  cursor: pointer;
-}
-.headerVue .header .navVue .navBox {
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
-}
-.headerVue .header .navVue .navBox .nav {
-  height: 60px;
-  line-height: 60px;
-  font-size: 16px;
-  margin-right: 30px;
-  cursor: pointer;
-  color: #666;
-  font-weight: 700;
-}
-.headerVue .header .navVue .navBox .color {
-  color: #fff;
-}
-.headerVue .header .navVue .navBox .nav:hover {
-  color: #02A7A0;
-  transform: scale(1.1);
-}
-.headerVue .header .navVue .navBox .active {
-  color: #02A7A0;
-  font-weight: 700;
-}
-.headerVue .header .oprationVue {
-  display: flex;
-  align-items: center;
-}
-.headerVue .header .oprationVue .scan {
-  width: 100px;
-  height: 36px;
-  background: #02A7A0;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
-}
-.headerVue .header .oprationVue .scan .codeVue {
-  width: 120px;
-  height: 120px;
-  background: #fff;
-  border-radius: 4px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  top: 40px;
-  z-index: 99999;
-  box-shadow: 0px 2px 4px 0px rgba(173, 179, 204, 0.39);
-}
-.headerVue .header .oprationVue .scan .codeVue img {
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-}
-.headerVue .header .oprationVue .scan img {
-  width: 14px;
-  height: 14px;
-  margin-right: 5px;
-}
-.headerVue .header .oprationVue .scan span {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 34px;
-}
-.headerVue .header .oprationVue .line {
-  width: 1px;
-  height: 18px;
-  margin: 0 20px;
-  border-radius: 1px;
-}
-.headerVue .header .oprationVue h4 {
-  color: #666;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.headerVue .header .oprationVue .user {
-  font-size: 30px;
-  color: rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-}
-.headerVue .header .oprationVue .color {
-  color: rgba(233, 233, 233, 0.7);
-}
-.headerVue .header .oprationVue h4:hover {
-  color: #02A7A0;
-}
 .container-swiper {
   width: 100vw;
   height: 100vh;
@@ -121,32 +5,75 @@
 .container-swiper .homeVue {
   width: 100%;
   height: 100%;
-  position: relative;
-  background: #000;
 }
-.container-swiper .homeVue .content {
-  width: 80%;
-  height: 300px;
+.container-swiper .homeVue .home {
+  width: 100%;
+  height: 100%;
+}
+.container-swiper .homeVue .home .content {
+  width: 100%;
+  height: 100%;
+  background: url("../assets/homg-bg.png") no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+.container-swiper .homeVue .home .content .inner {
+  max-width: 1200px;
+  width: 1200px;
+  height: 30%;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 38%;
   transform: translate(-50%, -50%);
 }
-.container-swiper .homeVue .content .name {
-  color: #333;
-  font-size: 60px;
-  text-align: center;
-  animation: fadeInRight 1s ease 0s both;
+.container-swiper .homeVue .home .content .inner .name {
+  font-size: 70px;
+  font-family: PingFang SC-Heavy, PingFang SC;
+  font-weight: 700;
+  color: #FFFFFF;
+  animation: fadeInRight 1s ease 0s normal;
 }
-.container-swiper .homeVue .content .btn {
-  width: 100px;
-  height: 40px;
-  background: #00ccff;
-  line-height: 40px;
-  text-align: center;
+.container-swiper .homeVue .home .content .inner .desc {
+  font-size: 50px;
+  font-family: PingFang SC-Medium, PingFang SC;
+  color: #FFFFFF;
+  animation: fadeInRight 1s ease 0.2s both;
+  padding-top: 40px;
+}
+.container-swiper .homeVue .home .content .inner .btnVue {
+  width: 308px;
+  height: 60px;
+  margin-top: 180px;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: fadeInRight 1s ease 0.4s both;
+}
+.container-swiper .homeVue .home .content .inner .btnVue .btn {
+  width: 308px;
+  height: 60px;
+  background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+.container-swiper .homeVue .home .content .inner .btnVue .btn span {
   color: #fff;
-  animation: fadeInRight 1s ease 0s both;
-  margin: 30px auto 0;
+  font-size: 30px;
+  transform: translateY(-2px);
+}
+.container-swiper .homeVue .home .content .inner .btnVue .btn img {
+  width: 26px;
+  height: 26px;
+  margin-left: 15px;
+}
+.container-swiper .homeVue .home .content .inner .btnVue:hover .btn {
+  animation: fadeinBg 2s ease 0s infinite both;
+}
+.container-swiper .homeVue .home .content .inner .btnVue:hover img {
+  animation: fadeinHover 0.5s linear 0s infinite both;
 }
 .container-swiper .productVue {
   width: 100%;
@@ -154,117 +81,559 @@
   position: relative;
 }
 .container-swiper .productVue .content {
-  width: 80%;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container-swiper .productVue .content .inner {
+  width: 100%;
+  height: calc(100vh - 80px);
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  transform: translate(-50%);
 }
-.container-swiper .productVue .content .name {
-  color: #333;
-  font-size: 60px;
+.container-swiper .productVue .content .inner .title {
+  font-size: 70px;
+  font-family: PingFang SC-Heavy, PingFang SC;
+  font-weight: 500;
+  color: #343434;
   text-align: center;
+  padding-top: 30px;
   animation: fadeInDown 1s ease 0s both;
 }
-.container-swiper .productVue .content .btn {
-  width: 100px;
-  height: 40px;
-  background: #00ccff;
+.container-swiper .productVue .content .inner .tabVue {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #E9E9E9;
+  margin-top: 30px;
+  animation: fadeInDown 1s ease 0.2s both;
+}
+.container-swiper .productVue .content .inner .tabVue .tabs {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-swiper .productVue .content .inner .tabVue .tabs .tab {
+  color: #343434;
+  font-size: 24px;
+  cursor: pointer;
+}
+.container-swiper .productVue .content .inner .tabVue .tabs .active {
+  color: #02A7A0;
+  font-weight: 700;
+}
+.container-swiper .productVue .content .inner .sonVue {
+  width: 1200px;
+  height: calc(100vh - 300px);
+  margin: 0 auto;
+  animation: fadeInDown 1s ease 0.4s both;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft {
+  flex: 1;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .name {
+  color: #303030;
+  font-size: 40px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  line-height: 1;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .caseVue {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 20px;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .caseVue .case {
+  width: 78%;
+  height: 44px;
   line-height: 40px;
+  border-radius: 10px;
+  border: 1px solid #02A7A0;
   text-align: center;
+  color: #6A6A6A;
+  font-size: 20px;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .caseVue .case span {
+  color: #343434;
+  font-weight: 600;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .btnVue {
+  width: 308px;
+  height: 60px;
+  margin-top: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: fadeInRight 1s ease 0.4s both;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .btnVue .btn {
+  width: 308px;
+  height: 60px;
+  background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .btnVue .btn span {
   color: #fff;
-  animation: fadeInDown 1s ease 0s both;
-  margin: 30px auto 0;
+  font-size: 30px;
+  transform: translateY(-2px);
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .btnVue .btn img {
+  width: 26px;
+  height: 26px;
+  margin-left: 15px;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .btnVue:hover .btn {
+  animation: fadeinBg 2s ease 0s infinite both;
+}
+.container-swiper .productVue .content .inner .sonVue .sonLeft .btnVue:hover img {
+  animation: fadeinHover 0.5s linear 0s infinite both;
+}
+.container-swiper .productVue .content .inner .sonVue .sonRignt {
+  width: 700px;
+  padding-left: 50px;
+}
+.container-swiper .productVue .content .inner .sonVue .sonRignt .elCarousel .el-carousel__item img {
+  width: 100%;
+  height: 100%;
 }
 .container-swiper .costomVue {
   width: 100%;
   height: 100%;
+}
+.container-swiper .costomVue .costom {
+  width: 100%;
+  height: 100%;
+}
+.container-swiper .costomVue .costom .content {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: url("../assets/costom-bg.png") no-repeat center center;
+  background-size: cover;
+}
+.container-swiper .costomVue .costom .content .content {
+  width: 100%;
+  height: 100%;
   position: relative;
-  background: #000;
+  background: rgba(0, 0, 0, 0.7);
 }
-.container-swiper .costomVue .content {
-  width: 80%;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.container-swiper .costomVue .content .name {
-  color: #333;
-  font-size: 60px;
-  text-align: center;
-  animation: fadeInDown 1s ease 0s both;
-}
-.container-swiper .costomVue .content .btn {
-  width: 100px;
-  height: 40px;
-  background: #00ccff;
-  line-height: 40px;
-  text-align: center;
+.container-swiper .costomVue .costom .content .content .title {
+  font-size: 70px;
   color: #fff;
+  text-align: center;
+  padding-top: 30px;
   animation: fadeInDown 1s ease 0s both;
-  margin: 30px auto 0;
+}
+.container-swiper .costomVue .costom .content .content .inner {
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 200px);
+  margin: 0 auto;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft {
+  width: 600px;
+  animation: fadeInDown 1s ease 0.2s both;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft .vedioVue {
+  width: 600px;
+  height: 400px;
+  background: url("../assets//costom-inner-bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft .scrollVue {
+  width: 600px;
+  height: 110px;
+  margin-top: 30px;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft .scrollVue img {
+  width: 20px;
+  height: 40px;
+  cursor: pointer;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft .scrollVue .elCarousel {
+  width: 500px;
+  height: 110px;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft .scrollVue .elCarousel .imgs {
+  width: 500px;
+  height: 110px;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerLeft .scrollVue .elCarousel .imgs img {
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight {
+  flex: 1;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .name {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  line-height: 1;
+  text-align: right;
+  animation: fadeInRight 1s ease 0.2s both;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight p {
+  color: #E9E9E9;
+  font-size: 24px;
+  text-align: right;
+  line-height: 40px;
+  animation: fadeInRight 1s ease 0.4s both;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .btnVue {
+  width: 308px;
+  height: 60px;
+  margin-top: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: fadeInRight 1s ease 0.6s both;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .btnVue .btn {
+  width: 308px;
+  height: 60px;
+  background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .btnVue .btn span {
+  color: #fff;
+  font-size: 30px;
+  transform: translateY(-2px);
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .btnVue .btn img {
+  width: 26px;
+  height: 26px;
+  margin-left: 15px;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .btnVue:hover .btn {
+  animation: fadeinBg 2s ease 0s infinite both;
+}
+.container-swiper .costomVue .costom .content .content .inner .innerRight .btnVue:hover img {
+  animation: fadeinHover 0.5s linear 0s infinite both;
 }
 .container-swiper .vipVue {
   width: 100%;
   height: 100%;
+}
+.container-swiper .vipVue .vip {
+  width: 100%;
+  height: 100%;
+}
+.container-swiper .vipVue .vip .content {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: url("../assets/vip-bg.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+.container-swiper .vipVue .vip .content .inner {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container-swiper .vipVue .vip .content .inner .title {
+  font-size: 70px;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #343434;
+  text-align: center;
+  padding-top: 30px;
+  animation: fadeInDown 1s ease 0s both;
+}
+.container-swiper .vipVue .vip .content .inner p {
+  font-size: 32px;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #6A6A6A;
+  text-align: center;
+  padding-top: 10px;
+  animation: fadeInDown 1s ease 0.2s both;
+}
+.container-swiper .vipVue .vip .content .inner .box {
+  width: 100%;
+  height: 440px;
+  background: #FFFFFF;
+  box-shadow: 0px 20px 45px 1px rgba(0, 0, 0, 0.16);
+  border-radius: 25px;
+  margin-top: 30px;
+  animation: fadeInDown 1s ease 0.4s both;
+  padding: 50px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
-.container-swiper .vipVue .content {
-  width: 80%;
-  height: 300px;
+.container-swiper .vipVue .vip .content .inner .box .hands {
   position: absolute;
-  left: 50%;
+  width: 287px;
+  height: 400px;
+  right: 50px;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
 }
-.container-swiper .vipVue .content .name {
-  color: #333;
-  font-size: 60px;
-  text-align: center;
-  animation: fadeInDown 1s ease 0s both;
+.container-swiper .vipVue .vip .content .inner .box .priceVue {
+  width: 200px;
+  height: 80px;
+  border-bottom: 2px solid #02A7A0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  position: relative;
 }
-.container-swiper .vipVue .content .btn {
-  width: 100px;
-  height: 40px;
-  background: #00ccff;
-  line-height: 40px;
-  text-align: center;
+.container-swiper .vipVue .vip .content .inner .box .priceVue span {
+  color: #02A7A0;
+  font-size: 24px;
+  transform: translateY(10px);
+  font-weight: 600;
+}
+.container-swiper .vipVue .vip .content .inner .box .priceVue p {
+  color: #02A7A0;
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 600;
+  font-family: Arial-Bold, Arial;
+}
+.container-swiper .vipVue .vip .content .inner .box .priceVue img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 2px;
+  right: -10px;
+}
+.container-swiper .vipVue .vip .content .inner .box .liVue {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-swiper .vipVue .vip .content .inner .box .liVue .li {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.container-swiper .vipVue .vip .content .inner .box .liVue .li img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  transform: translateY(5px);
+}
+.container-swiper .vipVue .vip .content .inner .box .liVue .li p {
+  font-size: 32px;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #343434;
+}
+.container-swiper .vipVue .vip .content .inner .box .liVue .li p span {
+  color: #989898;
+  font-weight: 500;
+}
+.container-swiper .vipVue .vip .content .inner .box .btnVue {
+  width: 308px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container-swiper .vipVue .vip .content .inner .box .btnVue .btn {
+  width: 308px;
+  height: 60px;
+  background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+.container-swiper .vipVue .vip .content .inner .box .btnVue .btn span {
   color: #fff;
-  animation: fadeInDown 1s ease 0s both;
-  margin: 30px auto 0;
+  font-size: 30px;
+  transform: translateY(-2px);
+}
+.container-swiper .vipVue .vip .content .inner .box .btnVue .btn img {
+  width: 26px;
+  height: 26px;
+  margin-left: 15px;
+}
+.container-swiper .vipVue .vip .content .inner .box .btnVue:hover .btn {
+  animation: fadeinBg 2s ease 0s infinite both;
+}
+.container-swiper .vipVue .vip .content .inner .box .btnVue:hover img {
+  animation: fadeinHover 0.5s linear 0s infinite both;
+}
+.container-swiper .vipVue .vip .content .inner h5 {
+  font-size: 32px;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #343434;
+  padding: 30px 0 20px;
+  animation: fadeInDown 1s ease 0.6s both;
+}
+.container-swiper .vipVue .vip .content .inner .p {
+  font-size: 24px;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #6A6A6A;
+  animation: fadeInDown 1s ease 0.8s both;
 }
 .container-swiper .partnerVue {
   width: 100%;
   height: 100%;
+  background: url("../assets/partner-bg.png") no-repeat center center;
+  background-size: cover;
+}
+.container-swiper .partnerVue .partner {
+  width: 100%;
+  height: 100%;
+}
+.container-swiper .partnerVue .partner .content {
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+.container-swiper .partnerVue .partner .content .inner {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.container-swiper .partnerVue .partner .content .inner .title {
+  font-size: 70px;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #DFB685;
+  text-align: center;
+  padding-top: 30px;
+  animation: fadeInDown 1s ease 0s both;
+}
+.container-swiper .partnerVue .partner .content .inner .main {
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 220px);
   position: relative;
-  background: #000;
 }
-.container-swiper .partnerVue .content {
-  width: 80%;
-  height: 300px;
+.container-swiper .partnerVue .partner .content .inner .main h6 {
+  font-size: 32px;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 400;
+  color: #DFB685;
+  text-align: center;
+  padding-top: 10px;
+  animation: fadeInDown 1s ease 0.2s both;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box {
+  width: 100%;
+  height: 489px;
   position: absolute;
-  left: 50%;
+  left: 0;
+  top: 90px;
+  background: url("../assets/partner-box.png") no-repeat center center;
+  background-size: 100% 100%;
+  padding: 30px 60px;
+  animation: fadeInDown 1s ease 0.4s both;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue h3 {
+  font-size: 36px;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #343434;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue .li img {
+  width: 38px;
+  height: 38px;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue .li p {
+  font-size: 32px;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #343434;
+  padding-left: 10px;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue .tip {
+  font-size: 22px;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #343434;
+}
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue .btns {
+  width: 325px;
+  height: 160px;
+  position: absolute;
+  right: 0;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.container-swiper .partnerVue .content .name {
-  color: #333;
-  font-size: 60px;
+.container-swiper .partnerVue .partner .content .inner .main .box .sonVue .btns .btn {
+  width: 100%;
+  height: 72px;
+  line-height: 72px;
   text-align: center;
-  animation: fadeInDown 1s ease 0s both;
+  font-size: 30px;
+  font-family: PingFang SC-Bold, PingFang SC;
+  font-weight: bold;
+  color: #343434;
+  background: linear-gradient(228deg, #E4C396 0%, #DAB081 100%);
+  border-radius: 10px;
 }
-.container-swiper .partnerVue .content .btn {
-  width: 100px;
-  height: 40px;
-  background: #00ccff;
-  line-height: 40px;
-  text-align: center;
+.container-swiper .partnerVue .partner .content .inner .main .btnVue {
+  width: 308px;
+  height: 60px;
+  margin: 560px auto 0;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: fadeInDown 1s ease 0.6s both;
+}
+.container-swiper .partnerVue .partner .content .inner .main .btnVue .btn {
+  width: 308px;
+  height: 60px;
+  background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #EED5B1);
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s;
+}
+.container-swiper .partnerVue .partner .content .inner .main .btnVue .btn span {
   color: #fff;
-  animation: fadeInDown 1s ease 0s both;
-  margin: 30px auto 0;
+  font-size: 30px;
+  transform: translateY(-2px);
+}
+.container-swiper .partnerVue .partner .content .inner .main .btnVue .btn img {
+  width: 26px;
+  height: 26px;
+  margin-left: 15px;
+}
+.container-swiper .partnerVue .partner .content .inner .main .btnVue:hover .btn {
+  animation: fadeinBg 2s ease 0s infinite both;
+}
+.container-swiper .partnerVue .partner .content .inner .main .btnVue:hover img {
+  animation: fadeinHover 0.5s linear 0s infinite both;
 }
 .container-swiper .aboutVue {
   width: 100%;
@@ -286,6 +655,7 @@
   text-align: center;
   font-weight: 600;
   animation: fadeInDown 1s ease 0s both;
+  padding-top: 30px;
 }
 .container-swiper .aboutVue .content p {
   color: #666;
@@ -309,7 +679,20 @@
   font-weight: 600;
   text-align: center;
 }
-.mask {
+.container-swiper .footerVue {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container-swiper .footerVue .content {
+  padding-top: 100px;
+}
+.container-swiper .footerVue .content .caseVue {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(131deg, #f05b77, #ff754a 51%, #ffd75d);
+}
+.joinmask {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
@@ -318,7 +701,7 @@
   top: 0;
   z-index: 9999;
 }
-.mask .loginVue {
+.joinmask .joinVue {
   width: 800px;
   height: 50%;
   position: absolute;
@@ -326,7 +709,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.mask .loginVue .login {
+.joinmask .joinVue .join {
   width: 100%;
   height: 100%;
   animation: fadeinScale 0.5s ease 0s both;
@@ -334,7 +717,7 @@
   border-radius: 10px;
   position: relative;
 }
-.mask .loginVue .login .close {
+.joinmask .joinVue .join .close {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -342,7 +725,7 @@
   right: -40px;
   cursor: pointer;
 }
-.mask .loginVue .login .close img {
+.joinmask .joinVue .join .close img {
   width: 100%;
   height: 100%;
 }
@@ -384,5 +767,27 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@keyframes fadeinHover {
+  0% {
+    transform: translate(10px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes fadeinBg {
+  0% {
+    background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
+    opacity: 1;
+  }
+  50% {
+    background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
+    opacity: 0.6;
+  }
+  100% {
+    background: linear-gradient(131deg, #f05b77, #ff754a 51%, #ffd75d);
+    opacity: 1;
   }
 }
