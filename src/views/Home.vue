@@ -372,7 +372,6 @@ export default {
                 
             } else {
                 if (this.current === 0) return
-                
                 this.current--
                 console.log(this.current,'kkkk')
                 this.$refs.carousel.setActiveItem(this.current);
@@ -414,8 +413,7 @@ export default {
                         this.logo = "dark"
                         this.activeColor = "#02A7A0"
                         break;
-                }
-                
+                } 
             }
         },
         setActiveItem(index) {
