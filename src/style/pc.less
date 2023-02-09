@@ -131,7 +131,7 @@
                     width: 1200px;
                     height: calc(100vh - 300px);
                     margin: 0 auto;
-                    animation: fadeInDown 1s ease 0.4s both;
+                    animation: fadeInRight 1s ease 0.4s both;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -169,7 +169,7 @@
                             margin-top: 70px;
                             border-radius: 10px;
                             cursor: pointer;
-                            animation: fadeInRight 1s ease 0.4s both;
+                            // animation: fadeInRight 1s ease 0.4s both;
                             .btn {
                                 width: 308px;
                                 height: 60px;
@@ -212,6 +212,240 @@
                                     width: 100%;
                                     height: 100%;
                                 }
+                            }
+                        }
+                    }   
+                }
+                .sonVue1 {
+                    width: 1200px;
+                    height: calc(100vh - 300px);
+                    margin: 0 auto;
+                    animation: fadeInRight 1s ease 0.4s both;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .sonLeft {
+                        width: 420px;
+                        height: 550px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .sonRight {
+                        flex: 1;
+                        padding-left: 200px;
+                        .name {
+                            color: #303030;
+                            font-size: 40px;
+                            font-weight: 500;
+                            padding-bottom: 20px;
+                            line-height: 1;
+                            text-align: right;
+                        }
+                        .label {
+                            color: #02A7A0;
+                            font-size: 30px;
+                            text-align: right;
+                        }
+                        .info {
+                            background: #cfcfcf;
+                            width: 100%;
+                            height: 40px;
+                            text-align: right;
+                            line-height: 40px;
+                            color: #333;
+                            font-size: 20px;
+                            padding-right: 10px;
+                            margin-top: 6px;
+                            margin-bottom: 20px;
+                        }
+                        .btnVue {
+                            width: 308px;
+                            height: 60px;
+                            margin-top: 30px;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            // animation: fadeInRight 1s ease 0.6s both;
+                            .btn {
+                                width: 308px;
+                                height: 60px;
+                                // background: #02A7A0; 
+                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                border-radius: 10px;
+                                opacity: 1;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: all 2s;
+                                span {
+                                    color: #fff;
+                                    font-size: 30px;
+                                    transform: translateY(-2px);
+                                }
+                                img {
+                                    width: 26px;
+                                    height: 26px;
+                                    margin-left: 15px;
+                                }
+                            }
+                        }
+                        .btnVue:hover {
+                            .btn {
+                                animation: fadeinBg 2s ease 0s infinite both;
+                            }
+                            img {
+                                animation: fadeinHover 0.5s linear 0s infinite both;
+                            }
+                        }
+                    }
+                }
+                .sonVue2 {
+                    width: 1200px;
+                    height: calc(100vh - 300px);
+                    margin: 0 auto;
+                    animation: fadeInRight 1s ease 0.4s both;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .sonRight {
+                        width: 420px;
+                        height: 550px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .sonLeft {
+                        flex: 1;
+                        .name {
+                            color: #303030;
+                            font-size: 40px;
+                            font-weight: 500;
+                            padding-bottom: 20px;
+                            line-height: 1;
+                            text-align: left;
+                        }
+                        .cell {
+                            font-size: 24px;
+                            color: #666;
+                            padding-top: 20px;
+                            span {
+                                color: #343434; 
+                            }
+                        }
+                        .btnVue {
+                            width: 308px;
+                            height: 60px;
+                            margin-top: 80px;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            // animation: fadeInRight 1s ease 0.6s both;
+                            .btn {
+                                width: 308px;
+                                height: 60px;
+                                // background: #02A7A0; 
+                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                border-radius: 10px;
+                                opacity: 1;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: all 2s;
+                                span {
+                                    color: #fff;
+                                    font-size: 30px;
+                                    transform: translateY(-2px);
+                                }
+                                img {
+                                    width: 26px;
+                                    height: 26px;
+                                    margin-left: 15px;
+                                }
+                            }
+                        }
+                        .btnVue:hover {
+                            .btn {
+                                animation: fadeinBg 2s ease 0s infinite both;
+                            }
+                            img {
+                                animation: fadeinHover 0.5s linear 0s infinite both;
+                            }
+                        }
+                    }
+                }
+                .sonVue3 {
+                    width: 1200px;
+                    height: calc(100vh - 300px);
+                    margin: 0 auto;
+                    animation: fadeInRight 1s ease 0.4s both;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .sonLeft {
+                        width: 600px;
+                        .elCarousel {
+                            .el-carousel__item  {
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                       
+                    }
+                    .sonRight {
+                        flex: 1;
+                        .name {
+                            color: #303030;
+                            font-size: 40px;
+                            font-weight: 500;
+                            padding-bottom: 20px;
+                            line-height: 1;
+                            text-align: right;
+                        }
+                        .cell {
+                            font-size: 24px;
+                            padding-top: 10px;
+                            color: #343434; 
+                            text-align: right;
+                        }
+                        .btnVue {
+                            width: 308px;
+                            height: 60px;
+                            margin-top: 100px;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            // animation: fadeInRight 1s ease 0.6s both;
+                            .btn {
+                                width: 308px;
+                                height: 60px;
+                                // background: #02A7A0; 
+                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                border-radius: 10px;
+                                opacity: 1;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: all 2s;
+                                span {
+                                    color: #fff;
+                                    font-size: 30px;
+                                    transform: translateY(-2px);
+                                }
+                                img {
+                                    width: 26px;
+                                    height: 26px;
+                                    margin-left: 15px;
+                                }
+                            }
+                        }
+                        .btnVue:hover {
+                            .btn {
+                                animation: fadeinBg 2s ease 0s infinite both;
+                            }
+                            img {
+                                animation: fadeinHover 0.5s linear 0s infinite both;
                             }
                         }
                     }
@@ -691,7 +925,7 @@
             }  
             .friends {
                 width: 960px;
-                height: 360px;
+                height: 400px;
                 background: rgba(233,233,233,0.7);
                 border-radius: 10px;
                 padding: 20px;
@@ -701,6 +935,30 @@
                     font-size: 20px;
                     font-weight: 600;
                     text-align: center;
+                    margin-bottom: 30px;
+                }
+                .friendVue {
+                    width: 100%;
+                    height: 290px;
+                    padding: 0 30px;
+                    .friendDiv {
+                        width: 100%;
+                        height: 130px;
+                        display: flex;
+                        justify-content: space-between;
+                        .friend {
+                            width: 30%;
+                            height: 130px;
+                            background: #fff;
+                            border-radius: 2px;
+                            padding: 15px;
+                            text-align: center;
+                            img {
+                                width: auto;
+                                height: 100%;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -815,9 +1073,17 @@
         background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
         opacity: 1;
     }
-    50% {
+    25% {
         background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
-        opacity: 0.6;
+        opacity: 0.7;
+    }
+    50% {
+        background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
+        opacity: 0.85;
+    }
+    75% {
+        background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
+        opacity: 0.7;
     }
     100% {
         background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
