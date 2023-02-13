@@ -1,6 +1,7 @@
 <template>
     <div class="page">
         <!-- 电脑端 -->
+<!--        hidden-sm-and-down-->
         <div class="hidden-sm-and-down">
             <HeaderVue :background="background" :current="current" :color="color" :logo="logo" :activeColor="activeColor"></HeaderVue>
             <!-- body轮播组件 -->
@@ -22,7 +23,7 @@
                                                 <img src="../assets/more.png" alt="">
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -39,16 +40,16 @@
                                         <div class="title">永不下播,降本增效</div>
                                         <div class="tabVue">
                                             <div class="tabs">
-                                                <div class="tab" v-for="(item,index) in tabs" :key="index" 
+                                                <div class="tab" v-for="(item,index) in tabs" :key="index"
                                                 :class="{active:son===index}"
                                                 @click="son=index"
                                                 >{{item}}</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <template>
                                             <div class="sonVue" v-show="son===0">
                                                 <div class="sonLeft">
-                                                    <div class="name">虚拟AI直播数字人</div>  
+                                                    <div class="name">虚拟AI直播数字人</div>
                                                     <div class="name" style="padding-bottom: 50px;">一键打造你的数字分身</div>
                                                     <div class="caseVue">
                                                         <div class="case"><span>商品讲解：</span> 文本输入，讲解一字不差</div>
@@ -62,14 +63,14 @@
                                                     <div class="caseVue flex-center">
                                                         <div class="case" style="border:1px solid #5D1882"><span>降本增效：</span>一台电脑无人直播模式</div>
                                                     </div>
-                                                    
+
                                                     <div class="btnVue">
                                                         <div class="btn">
                                                             <span>了解一下</span>
                                                             <img src="../assets/more.png" alt="">
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <div class="sonRignt">
                                                     <el-carousel :interval="3000" type="card" height="500px" class="elCarousel" indicator-position="none">
@@ -149,7 +150,7 @@
                                                     <div class="flex-end">
                                                         <div style="width:290px;height: 1px;background: #343434;margin-bottom: 80px;"></div>
                                                     </div>
-                                                    
+
                                                     <div class="cell">对比传统直播，节省大量人工、设备等开支</div>
                                                     <div class="cell">AI虚拟主播，24小时不下线，不错过任何成交机会</div>
                                                     <!-- <div class="flex-end">
@@ -304,7 +305,7 @@
                                                         <div class="btn">权益</div>
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div>
                                             <div class="btnVue">
                                                 <div class="btn">
                                                     <span>申请加入</span>
@@ -345,7 +346,7 @@
                                                     <div class="friend"></div>
                                                     <div class="friend"></div>
                                                     <div class="friend"></div>
-                                                </div>    
+                                                </div>
                                             </el-carousel-item>
                                         </el-carousel>
                                     </div>
@@ -383,15 +384,61 @@
 
         <!-- ========================================================================================================================================================= -->
 
-        <!-- 移动端 -->
+        <!--移动端-->
         <div class="hidden-md-and-up">
-            移动端暂未适配
+            <moreHeader></moreHeader>
+            <div class="part page1">
+                <h1>全视AI直播数字人</h1>
+                <h2>数字人营销<br>一站式解决方案</h2>
+                <p>
+                  Digital person marketing<br>
+                  One-stop solution<br>
+                  Let your live broadcast stand out
+                </p>
+
+                <div class="but1">
+                  <span>立即体验</span>
+                  <img src="../assets/more.png" alt="">
+                </div>
+
+
+            </div>
+
+            <div class="part page2">
+                <h1>永不下播,降本增效</h1>
+                <div class="tabs-wrap">
+                  <div class="tabs-item" :class="son == index ? 'active' : ''" v-for="(item,index) in tabs" :key="index" @click="son = index">{{item}}</div>
+                </div>
+                <template>
+                  <ai v-show="son == 0"></ai>
+                </template>
+                <template >
+                  <customization v-show="son == 1"></customization>
+                </template>
+                <template >
+                  <operation v-show="son == 2"></operation>
+                </template>
+                <template>
+                  <seize v-show="son == 3"></seize>
+                </template>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import {Swiper,SwiperSlide} from "vue-awesome-swiper"
+import "swiper/css/swiper.min.css"
+
+import ai from "@/components/ai.vue"
+import operation from "@/components/operation.vue"
+import seize from "@/components/seize.vue"
+import customization from "@/components/customization.vue"
+
+
+
 import HeaderVue from '@/components/HeaderVue.vue'
+import moreHeader from '@/components/moreHeader.vue'
 import { debounce } from '@/utils/index'
 
 export default {
@@ -405,18 +452,42 @@ export default {
             tabs: ["AI直播","量身定制","精准捕捉","基础/全案代运营"],
             son: 0,
             logo: "light",
-            activeColor: "#02A7A0"
+            activeColor: "#02A7A0",
+
+
+          swiperOptions: {
+            loop : true,
+            autoplay:true,
+            effect : 'coverflow',
+            slidesPerView: 3,
+            centeredSlides: true,
+            coverflowEffect: {
+              rotate: 0,
+              stretch: 10,
+              depth: 60,
+              modifier: 2,
+              slideShadows : true
+            },
+          }
+
         }
     },
     created() {
-        
+
     },
     mounted() {
         window.addEventListener('mousewheel', debounce(this.handleScroll), false)
         window.addEventListener('DOMMouseScroll', debounce(this.handleScroll), false)
     },
     components: {
-        HeaderVue
+        HeaderVue,
+        moreHeader,
+        Swiper,
+        SwiperSlide,
+        ai,
+        operation,
+        seize,
+        customization
     },
     methods: {
         handleScroll(e) {
@@ -469,12 +540,15 @@ export default {
                         break;
                 }
                 console.log(this.background)
-                
+
             } else {
                 if (this.current === 0) return
                 this.current--
                 console.log(this.current,'kkkk')
-                this.$refs.carousel.setActiveItem(this.current);
+
+                setTimeout(() => {
+                  this.$refs.carousel.setActiveItem(this.current);
+                },100)
                 switch (this.current) {
                     case 0:
                         this.background = "#0C121D";
@@ -513,7 +587,7 @@ export default {
                         this.logo = "dark"
                         this.activeColor = "#02A7A0"
                         break;
-                } 
+                }
             }
         },
         setActiveItem(index) {
@@ -539,13 +613,13 @@ export default {
                     this.color = "#fff"
                     this.logo = "light"
                     this.activeColor = "#02A7A0"
-                    break;   
+                    break;
                 case 3:
                     this.background = "rgba(0,0,0,0.01)";
                     this.color = "#666"
                     this.logo = "dark"
                     this.activeColor = "#02A7A0"
-                    break; 
+                    break;
                 case 4:
                     this.background = "rgba(0,0,0,0.1)";
                     this.color = "#fff"
