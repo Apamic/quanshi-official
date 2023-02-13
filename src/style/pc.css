@@ -217,12 +217,20 @@
   align-items: center;
 }
 .container-swiper .productVue .content .inner .sonVue1 .sonLeft {
-  width: 420px;
-  height: 550px;
+  width: 400px;
+  height: 500px;
+  position: relative;
 }
 .container-swiper .productVue .content .inner .sonVue1 .sonLeft img {
   width: 100%;
   height: 100%;
+}
+.container-swiper .productVue .content .inner .sonVue1 .sonLeft .liSon {
+  width: 207px;
+  height: 237px;
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
 }
 .container-swiper .productVue .content .inner .sonVue1 .sonRight {
   flex: 1;
@@ -242,7 +250,8 @@
   text-align: right;
 }
 .container-swiper .productVue .content .inner .sonVue1 .sonRight .info {
-  background: #cfcfcf;
+  background: url("../assets/li.png") no-repeat;
+  background-size: cover;
   width: 100%;
   height: 40px;
   text-align: right;
@@ -251,7 +260,7 @@
   font-size: 20px;
   padding-right: 10px;
   margin-top: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .container-swiper .productVue .content .inner .sonVue1 .sonRight .btnVue {
   width: 308px;
@@ -292,70 +301,43 @@
   height: calc(100vh - 300px);
   margin: 0 auto;
   animation: fadeInRight 1s ease 0.4s both;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
-.container-swiper .productVue .content .inner .sonVue2 .sonRight {
-  width: 420px;
-  height: 550px;
-}
-.container-swiper .productVue .content .inner .sonVue2 .sonRight img {
-  width: 100%;
-  height: 100%;
-}
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft {
-  flex: 1;
-}
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .name {
+.container-swiper .productVue .content .inner .sonVue2 .name {
   color: #303030;
   font-size: 40px;
   font-weight: 500;
-  padding-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 30px;
   line-height: 1;
-  text-align: left;
+  text-align: center;
 }
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .cell {
-  font-size: 24px;
-  color: #666;
-  padding-top: 20px;
-}
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .cell span {
-  color: #343434;
-}
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .btnVue {
-  width: 308px;
-  height: 60px;
-  margin-top: 80px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .btnVue .btn {
-  width: 308px;
-  height: 60px;
-  background: linear-gradient(131deg, #0bcbd4, #02A7A0 51%, #7d3ffc);
-  border-radius: 10px;
-  opacity: 1;
+.container-swiper .productVue .content .inner .sonVue2 .box {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 2s;
+  justify-content: space-between;
 }
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .btnVue .btn span {
-  color: #fff;
-  font-size: 30px;
-  transform: translateY(-2px);
+.container-swiper .productVue .content .inner .sonVue2 .box .boxLi {
+  width: 32%;
 }
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .btnVue .btn img {
-  width: 26px;
-  height: 26px;
-  margin-left: 15px;
+.container-swiper .productVue .content .inner .sonVue2 .box .boxLi img {
+  width: 100%;
+  height: auto;
 }
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .btnVue:hover .btn {
-  animation: fadeinBg 2s ease 0s infinite both;
+.container-swiper .productVue .content .inner .sonVue2 .box .boxLi .label {
+  font-size: 28px;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
 }
-.container-swiper .productVue .content .inner .sonVue2 .sonLeft .btnVue:hover img {
-  animation: fadeinHover 0.5s linear 0s infinite both;
+.container-swiper .productVue .content .inner .sonVue2 .box .boxLi .value {
+  font-size: 28px;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  text-align: center;
+  color: #6A6A6A;
+  line-height: 40px;
+  padding-top: 10px;
 }
 .container-swiper .productVue .content .inner .sonVue3 {
   width: 1200px;
@@ -605,7 +587,7 @@
   transform: translateY(-50%);
 }
 .container-swiper .vipVue .vip .content .inner .box .priceVue {
-  width: 200px;
+  width: 280px;
   height: 80px;
   border-bottom: 2px solid #02A7A0;
   display: flex;
@@ -639,7 +621,7 @@
   flex-wrap: wrap;
 }
 .container-swiper .vipVue .vip .content .inner .box .liVue .li {
-  width: 40%;
+  width: 50%;
   display: flex;
   align-items: center;
 }
@@ -752,7 +734,7 @@
   animation: fadeInDown 1s ease 0.2s both;
 }
 .container-swiper .partnerVue .partner .content .inner .main .box {
-  width: 100%;
+  width: 80%;
   height: 489px;
   position: absolute;
   left: 0;

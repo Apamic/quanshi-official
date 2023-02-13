@@ -2,8 +2,7 @@
     <div class="page">
         <!-- 电脑端 -->
         <div class="hidden-sm-and-down">
-            <HeaderVue :background="background" :current="current" :color="color" :logo="logo" :activeColor="activeColor">
-            </HeaderVue>
+            <HeaderVue :background="background" :current="current" :color="color" :logo="logo" :activeColor="activeColor"></HeaderVue>
             <!-- body轮播组件 -->
             <div class="container-swiper">
                 <el-carousel height="100vh" direction="vertical" :loop="false" :autoplay="false" ref="carousel"
@@ -16,7 +15,7 @@
                                 <div class="content">
                                     <div class="inner">
                                         <div class="name">全视AI直播数字人</div>
-                                        <div class="desc">专业带货数字人 一站式解决方案</div>
+                                        <div class="desc">专业直播数字人 一站式营销解决方案</div>
                                         <div class="btnVue">
                                             <div class="btn">
                                                 <span>立即体验</span>
@@ -88,7 +87,8 @@
                                             </div>
                                             <div class="sonVue1" v-show="son===1">
                                                 <div class="sonLeft">
-                                                    <img src="../assets/1.png" alt="">
+                                                    <img src="../assets/product1.png" alt="">
+                                                    <img src="../assets/son.png" class="liSon">
                                                 </div>
                                                 <div class="sonRight">
                                                     <div class="name">定制AI直播数字人</div>
@@ -99,32 +99,34 @@
                                                     <div class="info">基于最新声音克隆技术，极致还原原音的音色和风格</div>
                                                     <div class="label">专属发音人:</div>
                                                     <div class="info">专业录音工坊配音平台，享受更完善的配音服务</div>
-                                                    <div class="flex-end">
+                                                    <!-- <div class="flex-end">
                                                         <div class="btnVue">
                                                             <div class="btn">
                                                                 <span>了解一下</span>
                                                                 <img src="../assets/more.png">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="sonVue2" v-show="son===2">
-                                                <div class="sonLeft">
-                                                    <div class="name">多种动作捕捉方案</div>
-                                                    <div class="name" style="padding-bottom:100px">快速打造营销数字人</div>
-                                                    <div class="cell"><span>摄像头面捕:</span>1部手机实现面部表情精准捕捉</div>
-                                                    <div class="cell"><span>半身摄像头动捕:</span>1部手机+1个摄像头实现面部/身体捕捉</div>
-                                                    <div class="cell"><span>全身光学动捕:</span>6个点光学动捕 + 手套，实时性、稳定性更强</div>
-                                                    <div class="btnVue">
-                                                        <div class="btn">
-                                                            <span>了解一下</span>
-                                                            <img src="../assets/more.png">
-                                                        </div>
+                                                <div class="name">多种动作捕捉方案，快速打造营销数字人</div>
+                                                <div class="box">
+                                                    <div class="boxLi">
+                                                        <img src="../assets/product2.png">
+                                                        <div class="label">摄像头面捕：</div>
+                                                        <div class="value">1部手机实现面部表情精准捕捉</div>
                                                     </div>
-                                                </div>
-                                                <div class="sonRight">
-                                                    <img src="../assets/1.png" alt="">
+                                                    <div class="boxLi">
+                                                        <img src="../assets/product3.png">
+                                                        <div class="label">半身摄像头动捕:</div>
+                                                        <div class="value">1部手机+1个摄像头实现面部/身体捕捉</div>
+                                                    </div>
+                                                    <div class="boxLi">
+                                                        <img src="../assets/product4.png">
+                                                        <div class="label">全身光学动捕:</div>
+                                                        <div class="value">6个点光学动捕 + 手套，实时性、稳定性更强</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="sonVue3" v-show="son===3">
@@ -144,16 +146,20 @@
                                                 <div class="sonRight">
                                                     <div class="name">基础/全案代运营服务</div>
                                                     <div class="name" style="padding-bottom: 80px;">营销落地转化无忧财富</div>
+                                                    <div class="flex-end">
+                                                        <div style="width:290px;height: 1px;background: #343434;margin-bottom: 80px;"></div>
+                                                    </div>
+                                                    
                                                     <div class="cell">对比传统直播，节省大量人工、设备等开支</div>
                                                     <div class="cell">AI虚拟主播，24小时不下线，不错过任何成交机会</div>
-                                                    <div class="flex-end">
+                                                    <!-- <div class="flex-end">
                                                         <div class="btnVue">
                                                             <div class="btn">
                                                                 <span>了解一下</span>
                                                                 <img src="../assets/more.png">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </template>
@@ -189,9 +195,9 @@
                                             <div class="innerRight">
                                                 <div class="name">数字人形象自定义</div>
                                                 <div class="name" style="padding-bottom:80px">服装场景任意配</div>
-                                                <p>200+五官变形维度，自助捏脸</p>
+                                                <p>多种五官变形维度，自助捏脸</p>
                                                 <p>人物形象高度自定义</p>
-                                                <p>1000+组合方式，服装、场景、玩法随意搭配</p>
+                                                <p>多种组合方式，服装、场景、玩法随意搭配</p>
                                                 <div class="flex-end">
                                                     <div class="btnVue">
                                                         <div class="btn">
@@ -219,6 +225,7 @@
                                         <p>一键生成视频·人物素材丰富·海量场景资源·顶级配音神器</p>
                                         <div class="box">
                                             <div class="priceVue">
+                                                <span style="“font-size: 38px;font-weight: bold;color: #0C121D;padding-right: 20px;transform: translateY(8px);">一口价</span>
                                                 <span>￥</span>
                                                 <p>1299</p>
                                                 <span>/月</span>
@@ -273,7 +280,7 @@
                                                     <h3>伙伴权益说明：</h3>
                                                     <div class="li flex align-center">
                                                         <img src="../assets/icon1.png" alt="">
-                                                        <p>全视直播伙伴表示</p>
+                                                        <p>全视直播伙伴标识</p>
                                                     </div>
                                                     <div class="li flex align-center">
                                                         <img src="../assets/icon2.png" alt="">
@@ -287,7 +294,11 @@
                                                         <img src="../assets/icon4.png" alt="">
                                                         <p>免费直播模板库</p>
                                                     </div>
-                                                    <div class="tip">注：渠道合作5000起，具体咨询招商经理。要成为公司渠道合伙人必须要先体验和使用公司数字人产品。</div>
+                                                    <div class="li flex align-center">
+                                                        <img src="../assets/icon4.png" alt="">
+                                                        <p>全年导出不限时</p>
+                                                    </div>
+                                                    <div class="tip">注：渠道合作5000起，具体咨询招商经理。</div>
                                                     <div class="btns">
                                                         <div class="btn">福利</div>
                                                         <div class="btn">权益</div>
@@ -317,40 +328,18 @@
                                 <div class="friends">
                                     <div class="title">合作伙伴</div>
                                     <div class="friendVue">
-                                        <el-carousel height="290px" indicator-position="none" :autoplay="true" :interval="3000" :loop="true">
+                                        <el-carousel height="290px" indicator-position="none" :autoplay="false" :interval="3000" :loop="true">
                                             <el-carousel-item>
                                                 <div class="friendDiv">
                                                     <div class="friend">
                                                         <img src="../assets/logo_dark.png" alt="">
                                                     </div>
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                </div>
-                                                <div class="friendDiv" style="margin-top: 30px;">
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                </div>    
-                                            </el-carousel-item>
-                                            <el-carousel-item>
-                                                <div class="friendDiv">
+                                                    <div class="friend">
+                                                        <img src="../assets/logo.jpg" alt="">
+                                                    </div>
                                                     <div class="friend">
                                                         <img src="../assets/logo1.png" alt="">
                                                     </div>
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                </div>
-                                                <div class="friendDiv" style="margin-top: 30px;">
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                </div>    
-                                            </el-carousel-item>
-                                            <el-carousel-item>
-                                                <div class="friendDiv">
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
                                                 </div>
                                                 <div class="friendDiv" style="margin-top: 30px;">
                                                     <div class="friend"></div>
