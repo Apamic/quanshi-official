@@ -290,21 +290,24 @@
                                                         <img src="../assets/icon3.png" alt="">
                                                         <p>免费运营工具库</p>
                                                     </div>
+                                                    <div class="tip">注：渠道合作5000起，具体咨询招商经理。</div>
+                                                </div>
+                                                <div class="sonVue" style="padding-top: 117px;">
                                                     <div class="li flex align-center">
                                                         <img src="../assets/icon4.png" alt="">
                                                         <p>免费直播模板库</p>
                                                     </div>
                                                     <div class="li flex align-center">
-                                                        <img src="../assets/icon4.png" alt="">
+                                                        <img src="../assets/icon5.png" alt="">
+                                                        <p>全年直播不限时</p>
+                                                    </div> 
+                                                    <div class="li flex align-center">
+                                                        <img src="../assets/icon6.png" alt="">
                                                         <p>全年导出不限时</p>
-                                                    </div>
-                                                    <div class="tip">注：渠道合作5000起，具体咨询招商经理。</div>
-                                                    <div class="btns">
-                                                        <div class="btn">福利</div>
-                                                        <div class="btn">权益</div>
                                                     </div>
                                                 </div>
                                             </div> 
+                                           
                                             <div class="btnVue">
                                                 <div class="btn">
                                                     <span>申请加入</span>
@@ -322,44 +325,13 @@
                     <el-carousel-item name="5">
                         <div class="aboutVue">
                             <div class="content" v-if="current === 5">
-                                <h2>公司介绍</h2>
-                                <p>武汉全视数字科技有限公司，是一家专业、专注研发AI直播数字人软、硬件的高新科技企业。公司为企业用户提供AI直播数字人定制、基础运营服务、以及电商直播全套落地解决方案。公司依托博鳌全球数字经济峰会、蚂蚁链产业创新中心等优势资源。为用户从宏观战略到微观落地执行，提供全面、专业、细致的服务。
+                                <div class="inner">
+                                    <h2>公司介绍</h2> 
+                                    <p>武汉全视数字科技有限公司，是一家专业、专注研发AI直播数字人软、硬件的高新科技企业。公司为企业用户提供AI直播数字人定制、基础运营服务、以及电商直播全套落地解决方案。公司依托博鳌全球数字经济峰会、蚂蚁链产业创新中心等优势资源。为用户从宏观战略到微观落地执行，提供全面、专业、细致的服务。
                                 </p>
-                                <div class="friends">
-                                    <div class="title">合作伙伴</div>
-                                    <div class="friendVue">
-                                        <el-carousel height="290px" indicator-position="none" :autoplay="false" :interval="3000" :loop="true">
-                                            <el-carousel-item>
-                                                <div class="friendDiv">
-                                                    <div class="friend">
-                                                        <img src="../assets/logo_dark.png" alt="">
-                                                    </div>
-                                                    <div class="friend">
-                                                        <img src="../assets/logo.jpg" alt="">
-                                                    </div>
-                                                    <div class="friend">
-                                                        <img src="../assets/logo1.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="friendDiv" style="margin-top: 30px;">
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                    <div class="friend"></div>
-                                                </div>    
-                                            </el-carousel-item>
-                                        </el-carousel>
-                                    </div>
                                 </div>
-                                <!-- <div class="footer" v-if="isFooter"></div> -->
                             </div>
-                        </div>
-                    </el-carousel-item>
-
-                    <el-carousel-item name="6">
-                        <div class="footerVue">
-                            <div class="content" v-if="current === 6">
-                                <div class="caseVue"></div>
-                            </div>
+                            <div class="footerVue"></div>
                         </div>
                     </el-carousel-item>
                 </el-carousel>
@@ -425,7 +397,7 @@ export default {
             if (this.$children[0].isLoginVue) return
             if (this.isJoin) return
             if (e.deltaY > 0) {
-                if (this.current === 6) return
+                if (this.current === 5) return
                 this.current++
                 console.log(this.current,'kkkk')
                 this.$refs.carousel.setActiveItem(this.current);
@@ -462,9 +434,9 @@ export default {
                         this.activeColor = "#02A7A0"
                         break;
                     case 5:
-                        this.background = "rgba(0,0,0,0.01)";
-                        this.color = "#666"
-                        this.logo = "dark"
+                        this.background = "#0C121D";
+                        this.color = "#fff"
+                        this.logo = "light"
                         this.activeColor = "#02A7A0"
                         break;
                 }
@@ -508,9 +480,9 @@ export default {
                         this.activeColor = "#02A7A0"
                         break;
                     case 5:
-                        this.background = "rgba(0,0,0,0.01)";
-                        this.color = "#666"
-                        this.logo = "dark"
+                        this.background = "#0C121D";
+                        this.color = "#fff"
+                        this.logo = "light"
                         this.activeColor = "#02A7A0"
                         break;
                 } 
@@ -554,9 +526,9 @@ export default {
                     this.activeColor = "#02A7A0"
                     break;
                 case 5:
-                    this.background = "rgba(0,0,0,0.01)";
-                    this.color = "#666"
-                    this.logo = "dark"
+                    this.background = "#0C121D";
+                    this.color = "#fff"
+                    this.logo = "light"
                     this.activeColor = "#02A7A0"
                     break;
             }

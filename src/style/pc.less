@@ -242,7 +242,7 @@
                     }
                     .sonRight {
                         flex: 1;
-                        padding-left: 200px;
+                        padding-left: 280px;
                         .name {
                             color: #303030;
                             font-size: 40px;
@@ -752,7 +752,7 @@
                     .main {
                         width: 100%;
                         max-width: 1200px;
-                       height: calc(100vh - 220px);
+                        height: calc(100vh - 220px);
                         position: relative;
                         h6 {
                             font-size: 32px;
@@ -766,27 +766,26 @@
                         .box {
                             width: 80%;
                             height: 489px;
-                            position: absolute;
-                            left: 0;
+                            margin: 30px auto 0;
                             top: 90px;
                             background: url("../assets/partner-box.png") no-repeat center center;
                             background-size: 100% 100%;
                             padding: 30px 60px;
                             animation: fadeInDown 1s ease 0.4s both;
+                            display: flex;
                             .sonVue {
-                                width: 100%;
+                                width: 50%;
                                 height: 100%;
                                 position: relative;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
                                 h3 {
                                     font-size: 36px;
                                     font-family: PingFang SC-Bold, PingFang SC;
                                     font-weight: bold;
                                     color: #343434;
+                                    padding-bottom: 70px;
                                 }
                                 .li {
+                                    padding-bottom: 30px;
                                     img {
                                         width: 38px;
                                         height: 38px;
@@ -800,40 +799,21 @@
                                     }
                                 }  
                                 .tip {
+                                    width: 200%;
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 20px;
                                     font-size: 22px;
                                     font-family: PingFang SC-Regular, PingFang SC;
                                     font-weight: 400;
                                     color: #343434;
-                                }
-                                .btns {
-                                    width: 325px;
-                                    height: 160px;
-                                    position: absolute;
-                                    right: 0;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: space-between;
-                                    .btn {
-                                        width: 100%;
-                                        height: 72px;
-                                        line-height: 72px;
-                                        text-align: center;
-                                        font-size: 30px;
-                                        font-family: PingFang SC-Bold, PingFang SC;
-                                        font-weight: bold;
-                                        color: #343434;
-                                        background: linear-gradient(228deg, #E4C396 0%, #DAB081 100%);
-                                        border-radius: 10px;
-                                    }
                                 }
                             }
                         }
                         .btnVue {
                             width: 308px;
                             height: 60px;
-                            margin: 560px auto 0;
+                            margin: 30px auto 0;
                             border-radius: 10px;
                             cursor: pointer;
                             animation: fadeInDown 1s ease 0.6s both;
@@ -876,85 +856,50 @@
         width: 100%;
         height: 100%;
         position: relative;
-        // background: url("../assets//about-bg.png") no-repeat;
-        // background-size: 100% 100%;
+        background: url("../assets/about-bg.png") no-repeat;
+        background-size: 100% calc(100vh - 160px);
         .content {
             width: 960px;
-            height: calc(100vh - 60px);
+            height: calc(100vh - 260px);
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: 80px;
             transform: translate(-50%);
-            padding-top: 40px;
-            h2 {
-                color: #333;
-                font-size: 30px;
-                text-align: center;
-                font-weight: 600;
-                animation: fadeInDown 1s ease 0s both;
-                padding-top: 30px;
-            }      
-            p {
-                color: #666;
-                font-size: 18px;
-                text-indent: 2em;
-                padding: 30px 0 50px;
-                font-weight: 500;
-                animation: fadeInDown 1s ease 0s both;
-            }  
-            .friends {
-                width: 960px;
-                height: 400px;
-                background: rgba(233,233,233,0.7);
-                border-radius: 10px;
-                padding: 20px;
-                animation: fadeInRight 1s ease 0s both;
-                .title {
-                    color: #333;
-                    font-size: 20px;
-                    font-weight: 600;
-                    text-align: center;
-                    margin-bottom: 30px;
-                }
-                .friendVue {
-                    width: 100%;
-                    height: 290px;
-                    padding: 0 30px;
-                    .friendDiv {
-                        width: 100%;
-                        height: 130px;
-                        display: flex;
-                        justify-content: space-between;
-                        .friend {
-                            width: 30%;
-                            height: 130px;
-                            background: #fff;
-                            border-radius: 2px;
-                            padding: 15px;
-                            text-align: center;
-                            img {
-                                width: auto;
-                                height: 100%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .footerVue {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        .content {
-            padding-top: 100px;
-            .caseVue {
+            // padding-top: 40px;
+            .inner {
                 width: 100%;
-                height: 250px;
-                background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
+                height: 500px;
+                background: url("../assets/about-inner.png") no-repeat;
+                background-size: 100% 100%;
+                h2 {
+                    color: #fff;
+                    font-size: 70px;
+                    font-weight: 500;
+                    text-align: center;
+                    padding-top: 30px;
+                }
+                p {
+                    font-size: 28px;
+                    color: #fff;
+                    padding: 50px;
+                    text-indent: 2em;
+                    line-height: 48px;
+                }
+            }
+        }
+        .footerVue {
+            width: 100%;
+            height: 160px;
+            background: #0C121D;
+            .content {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                
             }
         }
     }
+    
 }
 
 
