@@ -25,7 +25,8 @@ export default {
       justify-content: space-between;
       padding: 0 0.2rem;
       height: 0.5rem;
-      //background: #0C121D;
+      background: #0C121D;
+      z-index: 1000;
       img {
         width: 0.58rem;
         height: 0.42rem;

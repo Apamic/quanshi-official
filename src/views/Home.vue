@@ -2,16 +2,36 @@
     <div class="page">
         <!-- 电脑端 -->
 <!--        hidden-sm-and-down-->
+
+<!--      <swiper class="container-swiper" :options="swiperOption">-->
+<!--        <swiper-slide>Slide 1</swiper-slide>-->
+<!--        <swiper-slide>Slide 2</swiper-slide>-->
+<!--        <swiper-slide>Slide 3</swiper-slide>-->
+<!--        <swiper-slide>Slide 4</swiper-slide>-->
+<!--        <swiper-slide>Slide 5</swiper-slide>-->
+<!--        <swiper-slide>Slide 6</swiper-slide>-->
+<!--        <swiper-slide>Slide 7</swiper-slide>-->
+<!--        <swiper-slide>Slide 8</swiper-slide>-->
+<!--        <swiper-slide>Slide 9</swiper-slide>-->
+<!--        <swiper-slide>Slide 10</swiper-slide>-->
+
+<!--      </swiper>-->
+
+
         <div class="hidden-sm-and-down">
             <HeaderVue :background="background" :current="current" :color="color" :logo="logo" :activeColor="activeColor"></HeaderVue>
             <!-- body轮播组件 -->
             <div class="container-swiper">
-                <el-carousel height="100vh" direction="vertical" :loop="false" :autoplay="false" ref="carousel"
-                    :initial-index="current" @setActiveItem="setActiveItem" indicator-position="none">
+
+
+                <swiper class="container-swiper" :options="swiperOption" @slideChange="onSlideChange()"  @swiper="onSwiper">
+<!--                <el-carousel height="100vh" direction="vertical" :loop="false" :autoplay="false" ref="carousel"-->
+<!--                    :initial-index="current" @setActiveItem="setActiveItem" indicator-position="none">-->
                     <!-- 首页 -->
-                    <el-carousel-item name="0">
+                    <swiper-slide >
                         <div class="homeVue">
-                            <div class="home" v-if="current === 0">
+<!--                            <div class="home" v-if="current === 0">-->
+                              <div class="home" >
                                 <div style="height: 100px;"></div>
                                 <div class="content">
                                     <div class="inner">
@@ -28,12 +48,12 @@
                                 </div>
                             </div>
                         </div>
-                    </el-carousel-item>
+                    </swiper-slide>
 
                     <!-- 产品介绍 -->
-                    <el-carousel-item name="1">
+                    <swiper-slide name="1">
                         <div class="productVue">
-                            <div class="content" v-if="current === 1">
+                            <div class="content" >
                                 <div style="height: 100px;"></div>
                                 <div class="content">
                                     <div class="inner">
@@ -168,12 +188,12 @@
                                 </div>
                             </div>
                         </div>
-                    </el-carousel-item>
+                    </swiper-slide>
 
                     <!-- 形象定制 -->
-                    <el-carousel-item name="2">
+                    <swiper-slide name="2">
                         <div class="costomVue">
-                            <div class="costom" v-if="current === 2">
+                            <div class="costom" >
                                 <div style="height: 100px;"></div>
                                 <div class="content">
                                     <div class="content">
@@ -213,12 +233,12 @@
                                 </div>
                             </div>
                         </div>
-                    </el-carousel-item>
+                    </swiper-slide>
 
                     <!-- 会员中心 -->
-                    <el-carousel-item name="3">
+                    <swiper-slide name="3">
                         <div class="vipVue">
-                            <div class="vip" v-if="current === 3">
+                            <div class="vip">
                                 <div style="height: 100px;"></div>
                                 <div class="content">
                                     <div class="inner">
@@ -264,12 +284,12 @@
                                 </div>
                             </div>
                         </div>
-                    </el-carousel-item>
+                    </swiper-slide>
 
                     <!-- 伙伴计划 -->
-                    <el-carousel-item name="4">
+                    <swiper-slide name="4">
                         <div class="partnerVue">
-                            <div class="partner" v-if="current === 4">
+                            <div class="partner">
                                 <div style="height: 100px;"></div>
                                 <div class="content">
                                     <div class="inner">
@@ -317,12 +337,12 @@
                                 </div>
                             </div>
                         </div>
-                    </el-carousel-item>
+                    </swiper-slide>
 
                     <!-- 关于我们 -->
-                    <el-carousel-item name="5">
+                    <swiper-slide name="5">
                         <div class="aboutVue">
-                            <div class="content" v-if="current === 5">
+                            <div class="content">
                                 <h2>公司介绍</h2>
                                 <p>武汉全视数字科技有限公司，是一家专业、专注研发AI直播数字人软、硬件的高新科技企业。公司为企业用户提供AI直播数字人定制、基础运营服务、以及电商直播全套落地解决方案。公司依托博鳌全球数字经济峰会、蚂蚁链产业创新中心等优势资源。为用户从宏观战略到微观落地执行，提供全面、专业、细致的服务。
                                 </p>
@@ -354,16 +374,17 @@
                                 <!-- <div class="footer" v-if="isFooter"></div> -->
                             </div>
                         </div>
-                    </el-carousel-item>
+                    </swiper-slide>
 
-                    <el-carousel-item name="6">
-                        <div class="footerVue">
-                            <div class="content" v-if="current === 6">
-                                <div class="caseVue"></div>
-                            </div>
-                        </div>
-                    </el-carousel-item>
-                </el-carousel>
+<!--                    <el-carousel-item name="6">-->
+<!--                        <div class="footerVue">-->
+<!--                            <div class="content" v-if="current === 6">-->
+<!--                                <div class="caseVue"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </el-carousel-item>-->
+<!--                </el-carousel>-->
+                  </swiper>
             </div>
 
 
@@ -385,10 +406,10 @@
         <!-- ========================================================================================================================================================= -->
 
         <!--移动端-->
-        <div class="hidden-md-and-up">
+        <div class="hidden-md-and-up" style="background: #0C121D">
             <moreHeader></moreHeader>
             <div class="part page1">
-                <h1>全视AI直播数字人</h1>
+                <h1 class="name">全视AI直播数字人</h1>
                 <h2>数字人营销<br>一站式解决方案</h2>
                 <p>
                   Digital person marketing<br>
@@ -400,8 +421,6 @@
                   <span>立即体验</span>
                   <img src="../assets/more.png" alt="">
                 </div>
-
-
             </div>
 
             <div class="part page2">
@@ -409,19 +428,37 @@
                 <div class="tabs-wrap">
                   <div class="tabs-item" :class="son == index ? 'active' : ''" v-for="(item,index) in tabs" :key="index" @click="son = index">{{item}}</div>
                 </div>
-                <template>
-                  <ai v-show="son == 0"></ai>
+                <template v-if="son == 0">
+                  <ai ></ai>
                 </template>
-                <template >
-                  <customization v-show="son == 1"></customization>
+                <template v-if="son == 1">
+                  <customization ></customization>
                 </template>
-                <template >
-                  <operation v-show="son == 2"></operation>
+                <template v-if="son == 2">
+                  <operation ></operation>
                 </template>
-                <template>
-                  <seize v-show="son == 3"></seize>
+                <template v-if="son == 3">
+                  <seize ></seize>
                 </template>
             </div>
+
+
+            <div class="part page3">
+
+              <imageCustom></imageCustom>
+
+            </div>
+
+            <div class="part page4">
+              <member></member>
+            </div>
+
+            <div class="part page5">
+              <cooperation></cooperation>
+            </div>
+
+            <pageFooting></pageFooting>
+
         </div>
     </div>
 </template>
@@ -434,7 +471,10 @@ import ai from "@/components/ai.vue"
 import operation from "@/components/operation.vue"
 import seize from "@/components/seize.vue"
 import customization from "@/components/customization.vue"
-
+import imageCustom from "@/components/imageCustom";
+import member from "@/components/member";
+import cooperation from "@/components/cooperation";
+import pageFooting from "@/components/pageFooting";
 
 
 import HeaderVue from '@/components/HeaderVue.vue'
@@ -455,19 +495,9 @@ export default {
             activeColor: "#02A7A0",
 
 
-          swiperOptions: {
-            loop : true,
-            autoplay:true,
-            effect : 'coverflow',
-            slidesPerView: 3,
-            centeredSlides: true,
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 10,
-              depth: 60,
-              modifier: 2,
-              slideShadows : true
-            },
+          swiperOption: {
+            direction: 'vertical',
+
           }
 
         }
@@ -476,8 +506,8 @@ export default {
 
     },
     mounted() {
-        window.addEventListener('mousewheel', debounce(this.handleScroll), false)
-        window.addEventListener('DOMMouseScroll', debounce(this.handleScroll), false)
+        // window.addEventListener('mousewheel', debounce(this.handleScroll), false)
+        // window.addEventListener('DOMMouseScroll', debounce(this.handleScroll), false)
     },
     components: {
         HeaderVue,
@@ -487,18 +517,34 @@ export default {
         ai,
         operation,
         seize,
-        customization
+        customization,
+        imageCustom,
+        member,
+        cooperation,
+        pageFooting
     },
     methods: {
+
+      onSlideChange(e) {
+        console.log(e)
+      },
+
+      onSwiper(swiper) {
+        console.log(swiper);
+      },
+
         handleScroll(e) {
             //console.log(e.deltaY)  // 正值为向下滚动，负值为向上滚动
             console.log(this.$children[0],this.current)
             if (this.$children[0].isLoginVue) return
             if (this.isJoin) return
             if (e.deltaY > 0) {
-                if (this.current === 6) return
+                if (this.current === 5) return
                 this.current++
                 console.log(this.current,'kkkk')
+                setTimeout(() => {
+                  this.$refs.carousel.setActiveItem(this.current);
+                })
                 this.$refs.carousel.setActiveItem(this.current);
                 switch (this.current) {
                     case 0:
@@ -594,7 +640,11 @@ export default {
             if (this.current === index) return
             console.log(this.color)
             this.current = index
-            this.$refs.carousel.setActiveItem(index)
+
+            setTimeout(() => {
+              this.$refs.carousel.setActiveItem(index)
+            })
+
             switch (index) {
                 case 0:
                     this.background = "#0C121D";
