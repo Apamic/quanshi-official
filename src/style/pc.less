@@ -13,6 +13,19 @@
                 background: url("../assets/homg-bg.png") no-repeat center;
                 background-size: cover;
                 position: relative;
+
+                .active {
+                    .name {
+                        animation: fadeInRight 1s ease 0s normal;
+                    }
+                    .desc {
+                        animation: fadeInRight 1s ease 0.2s both;
+                    }
+                    .btnVue {
+                        animation: fadeInRight 1s ease 0.2s both
+                    }
+                }
+
                 .inner {
                     max-width: 1200px;
                     width: 1200px;
@@ -26,13 +39,13 @@
                         font-family: PingFang SC-Heavy, PingFang SC;
                         font-weight: 700;
                         color: #FFFFFF;
-                        animation: fadeInRight 1s ease 0s normal;
+                        //animation: fadeInRight 1s ease 0s normal;
                     }
                     .desc {
                         font-size: 50px;
                         font-family: PingFang SC-Medium, PingFang SC;
                         color: #FFFFFF;
-                        animation: fadeInRight 1s ease 0.2s both;
+                        //animation: fadeInRight 1s ease 0.2s both;
                         padding-top: 40px;
                     }
                     .btnVue {
@@ -41,12 +54,13 @@
                         margin-top: 180px;
                         border-radius: 10px;
                         cursor: pointer;
-                        animation: fadeInRight 1s ease 0.4s both;
+                        //animation: fadeInRight 1s ease 0.4s both;
                         .btn {
                             width: 308px;
                             height: 60px;
                             // background: #02A7A0;
-                            background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                            background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                            background-size: 400% 400%;
                             border-radius: 10px;
                             opacity: 1;
                             display: flex;
@@ -67,11 +81,11 @@
                     }
                     .btnVue:hover {
                         .btn {
-                            animation: fadeinBg 2s ease 0s infinite both;
+                            animation: fadeinBg 5s ease 0s infinite both;
                             // background: #000;
                         }
                         img {
-                            animation: fadeinHover 0.5s linear 0s infinite both;
+                            animation: fadeinHover 1s linear 0s infinite both;
                         }
                     }
                 }
@@ -86,6 +100,21 @@
             width: 100%;
             height: 100%;
             position: relative;
+
+            .active {
+                .title {
+                    animation: fadeInDown 1s ease 0s both;
+                }
+
+                .tabVue {
+                    animation: fadeInDown 1s ease 0.2s both;
+                }
+
+                .sonVue {
+                    animation: fadeInRight 1s ease 0.4s both;
+                }
+            }
+
             .inner {
                 width: 100%;
                 height: calc(100vh - 80px);
@@ -100,14 +129,14 @@
                     color: #343434;
                     text-align: center;
                     padding-top: 30px;
-                    animation: fadeInDown 1s ease 0s both;
+                    //animation: fadeInDown 1s ease 0s both;
                 }
                 .tabVue {
                     width: 100%;
                     height: 60px;
                     border-bottom: 1px solid #E9E9E9;
                     margin-top: 30px;
-                    animation: fadeInDown 1s ease 0.2s both;
+                    //animation: fadeInDown 1s ease 0.2s both;
                     .tabs {
                         width: 100%;
                         max-width: 1200px;
@@ -131,7 +160,7 @@
                     width: 1200px;
                     height: calc(100vh - 300px);
                     margin: 0 auto;
-                    animation: fadeInRight 1s ease 0.4s both;
+                    //animation: fadeInRight 1s ease 0.4s both;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -174,7 +203,8 @@
                                 width: 308px;
                                 height: 60px;
                                 // background: #02A7A0;
-                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                                background-size: 400% 400%;
                                 border-radius: 10px;
                                 opacity: 1;
                                 display: flex;
@@ -195,11 +225,11 @@
                         }
                         .btnVue:hover {
                             .btn {
-                                animation: fadeinBg 2s ease 0s infinite both;
+                                animation: fadeinBg 5s ease 0s infinite both;
                                 // background: #000;
                             }
                             img {
-                                animation: fadeinHover 0.5s linear 0s infinite both;
+                                animation: fadeinHover 1s linear 0s infinite both;
                             }
                         }
                     }
@@ -280,7 +310,8 @@
                                 width: 308px;
                                 height: 60px;
                                 // background: #02A7A0;
-                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                                background-size: 400% 400%;
                                 border-radius: 10px;
                                 opacity: 1;
                                 display: flex;
@@ -301,10 +332,10 @@
                         }
                         .btnVue:hover {
                             .btn {
-                                animation: fadeinBg 2s ease 0s infinite both;
+                                animation: fadeinBg 5s ease 0s infinite both;
                             }
                             img {
-                                animation: fadeinHover 0.5s linear 0s infinite both;
+                                animation: fadeinHover 1s linear 0s infinite both;
                             }
                         }
                     }
@@ -400,7 +431,8 @@
                                 width: 308px;
                                 height: 60px;
                                 // background: #02A7A0;
-                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                                background-size: 400% 400%;
                                 border-radius: 10px;
                                 opacity: 1;
                                 display: flex;
@@ -421,10 +453,10 @@
                         }
                         .btnVue:hover {
                             .btn {
-                                animation: fadeinBg 2s ease 0s infinite both;
+                                animation: fadeinBg 5s ease 0s infinite both;
                             }
                             img {
-                                animation: fadeinHover 0.5s linear 0s infinite both;
+                                animation: fadeinHover 1s linear 0s infinite both;
                             }
                         }
                     }
@@ -443,6 +475,33 @@
                 height: calc(100vh - 100px);
                 background: url("../assets/costom-bg.png") no-repeat center center;
                 background-size: cover;
+
+
+                .active {
+                    .title {
+                        animation: fadeInDown 1s ease 0s both;
+                    }
+
+                    .inner {
+                        .innerLeft {
+                            animation: fadeInDown 1s ease 0.2s both;
+                        }
+                        .innerRight {
+                            .name {
+                                animation: fadeInRight 1s ease 0.2s both;
+                            }
+
+                            p {
+                                animation: fadeInRight 1s ease 0.4s both;
+                            }
+
+                            .btnVue {
+                                animation: fadeInRight 1s ease 0.6s both;
+                            }
+                        }
+                    }
+                }
+
                 .content {
                     width: 100%;
                     height: 100%;
@@ -453,7 +512,7 @@
                         color: #fff;
                         text-align: center;
                         padding-top: 30px;
-                        animation: fadeInDown 1s ease 0s both;
+                        //animation: fadeInDown 1s ease 0s both;
                     }
                     .inner {
                         width: 100%;
@@ -462,7 +521,7 @@
                         margin: 0 auto;
                         .innerLeft {
                             width: 600px;
-                            animation: fadeInDown 1s ease 0.2s both;
+                            //animation: fadeInDown 1s ease 0.2s both;
                             .vedioVue {
                                 width: 600px;
                                 height: 400px;
@@ -502,14 +561,14 @@
                                 padding-bottom: 20px;
                                 line-height: 1;
                                 text-align: right;
-                                animation: fadeInRight 1s ease 0.2s both;
+                                //animation: fadeInRight 1s ease 0.2s both;
                             }
                             p {
                                 color: #E9E9E9;
                                 font-size: 24px;
                                 text-align: right;
                                 line-height: 40px;
-                                animation: fadeInRight 1s ease 0.4s both;
+                                //animation: fadeInRight 1s ease 0.4s both;
                             }
                             .btnVue {
                                 width: 308px;
@@ -517,12 +576,13 @@
                                 margin-top: 100px;
                                 border-radius: 10px;
                                 cursor: pointer;
-                                animation: fadeInRight 1s ease 0.6s both;
+                                //animation: fadeInRight 1s ease 0.6s both;
                                 .btn {
                                     width: 308px;
                                     height: 60px;
                                     // background: #02A7A0;
-                                    background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                    background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                                    background-size: 400% 400%;
                                     border-radius: 10px;
                                     opacity: 1;
                                     display: flex;
@@ -543,10 +603,10 @@
                             }
                             .btnVue:hover {
                                 .btn {
-                                    animation: fadeinBg 2s ease 0s infinite both;
+                                    animation: fadeinBg 5s ease 0s infinite both;
                                 }
                                 img {
-                                    animation: fadeinHover 0.5s linear 0s infinite both;
+                                    animation: fadeinHover 1s linear 0s infinite both;
                                 }
                             }
                         }
@@ -566,6 +626,29 @@
                 height: calc(100vh - 100px);
                 background: url("../assets/vip-bg.png") no-repeat center center;
                 background-size: 100% 100%;
+
+                .active {
+                    .title {
+                        animation: fadeInDown 1s ease 0s both;
+                    }
+
+                    p {
+                        animation: fadeInDown 1s ease 0.2s both;
+                    }
+
+                    .box {
+                        animation: fadeInDown 1s ease 0.4s both;
+                    }
+
+                    .p {
+                        animation: fadeInDown 1s ease 0.8s both;
+                    }
+
+                    h5 {
+                        animation: fadeInDown 1s ease 0.6s both;
+                    }
+                }
+
                 .inner {
                     width: 100%;
                     height: 100%;
@@ -578,7 +661,7 @@
                         color: #343434;
                         text-align: center;
                         padding-top: 30px;
-                        animation: fadeInDown 1s ease 0s both;
+                        //animation: fadeInDown 1s ease 0s both;
                     }
                     p {
                         font-size: 32px;
@@ -587,7 +670,7 @@
                         color: #6A6A6A;
                         text-align: center;
                         padding-top: 10px;
-                        animation: fadeInDown 1s ease 0.2s both;
+                        //animation: fadeInDown 1s ease 0.2s both;
                     }
                     .box {
                         width: 100%;
@@ -596,7 +679,7 @@
                         box-shadow: 0px 20px 45px 1px rgba(0,0,0,0.16);
                         border-radius: 25px;
                         margin-top: 30px;
-                        animation: fadeInDown 1s ease 0.4s both;
+                        //animation: fadeInDown 1s ease 0.4s both;
                         padding: 50px 70px;
                         display: flex;
                         flex-direction: column;
@@ -677,7 +760,8 @@
                                 width: 308px;
                                 height: 60px;
                                 // background: #02A7A0;
-                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
+                                background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                                background-size: 400% 400%;
                                 border-radius: 10px;
                                 opacity: 1;
                                 display: flex;
@@ -698,10 +782,10 @@
                         }
                         .btnVue:hover {
                             .btn {
-                                animation: fadeinBg 2s ease 0s infinite both;
+                                animation: fadeinBg 5s ease 0s infinite both;
                             }
                             img {
-                                animation: fadeinHover 0.5s linear 0s infinite both;
+                                animation: fadeinHover 1s linear 0s infinite both;
                             }
                         }
                     }
@@ -711,14 +795,14 @@
                         font-weight: bold;
                         color: #343434;
                         padding: 30px 0 20px;
-                        animation: fadeInDown 1s ease 0.6s both;
+                        //animation: fadeInDown 1s ease 0.6s both;
                     }
                     .p {
                         font-size: 24px;
                         font-family: PingFang SC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #6A6A6A;
-                        animation: fadeInDown 1s ease 0.8s both;
+                        //animation: fadeInDown 1s ease 0.8s both;
                     }
                 }
             }
@@ -735,6 +819,28 @@
             .content {
                 width: 100%;
                 height: calc(100vh - 100px);
+
+                .active {
+                    .title {
+                        animation: fadeInDown 1s ease 0s both;
+                    }
+
+                    .main {
+                        h6 {
+                            animation: fadeInDown 1s ease 0.2s both;
+                        }
+                        .box {
+                            animation: fadeInDown 1s ease 0.4s both;
+                        }
+
+                        .btnVue {
+                            animation: fadeInDown 1s ease 0.6s both;
+                        }
+
+                    }
+                }
+
+
                 .inner {
                     width: 100%;
                     max-width: 1200px;
@@ -747,7 +853,7 @@
                         color: #DFB685;
                         text-align: center;
                         padding-top: 30px;
-                        animation: fadeInDown 1s ease 0s both;
+                        //animation: fadeInDown 1s ease 0s both;
                     }
                     .main {
                         width: 100%;
@@ -761,18 +867,19 @@
                             color: #DFB685;
                             text-align: center;
                             padding-top: 10px;
-                            animation: fadeInDown 1s ease 0.2s both;
+                            //animation: fadeInDown 1s ease 0.2s both;
                         }
                         .box {
+                            margin: 60px auto 0;
                             width: 80%;
                             height: 489px;
-                            position: absolute;
-                            left: 0;
-                            top: 90px;
+                            //position: absolute;
+                            //left: 0;
+                            //top: 90px;
                             background: url("../assets/partner-box.png") no-repeat center center;
                             background-size: 100% 100%;
                             padding: 30px 60px;
-                            animation: fadeInDown 1s ease 0.4s both;
+                            //animation: fadeInDown 1s ease 0.4s both;
                             .sonVue {
                                 width: 100%;
                                 height: 100%;
@@ -833,14 +940,15 @@
                         .btnVue {
                             width: 308px;
                             height: 60px;
-                            margin: 560px auto 0;
+                            margin: 40px auto 0;
                             border-radius: 10px;
                             cursor: pointer;
-                            animation: fadeInDown 1s ease 0.6s both;
+                            //animation: fadeInDown 1s ease 0.6s both;
                             .btn {
                                 width: 308px;
                                 height: 60px;
-                                background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#EED5B1);
+                                background: linear-gradient(131deg,#0bcbd4,#7d3ffc,#f05b77,#ffd75d);
+                                background-size: 400% 400%;
                                 border-radius: 10px;
                                 opacity: 1;
                                 display: flex;
@@ -861,10 +969,10 @@
                         }
                         .btnVue:hover {
                             .btn {
-                                animation: fadeinBg 2s ease 0s infinite both;
+                                animation: fadeinBg 5s ease 0s infinite both;
                             }
                             img {
-                                animation: fadeinHover 0.5s linear 0s infinite both;
+                                animation: fadeinHover 1s linear 0s infinite both;
                             }
                         }
                     }
@@ -876,31 +984,42 @@
         width: 100%;
         height: 100%;
         position: relative;
-        // background: url("../assets//about-bg.png") no-repeat;
-        // background-size: 100% 100%;
+        background: url("../assets/about-foot.png") no-repeat;
+        background-size: 100% 100%;
+
+
+        .active {
+            .content-wrap {
+                animation: fadeInRight 1s ease 0s both;
+            }
+        }
+
         .content {
-            width: 960px;
-            height: calc(100vh - 60px);
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translate(-50%);
-            padding-top: 40px;
+            //position: absolute;
+            margin: 0 auto;
+            padding-top: 100px;
+            width: 1200px;
+            //height: calc(100vh - 60px);
+            //left: 50%;
+            //bottom: 0;
+            //transform: translate(-50%);
             h2 {
-                color: #333;
-                font-size: 30px;
+                color: #fff;
+                font-size: 50px;
                 text-align: center;
-                font-weight: 600;
-                animation: fadeInDown 1s ease 0s both;
+                font-weight: 700;
+                //animation: fadeInDown 1s ease 0s both;
                 padding-top: 30px;
             }
             p {
-                color: #666;
-                font-size: 18px;
+                color: #fff;
+                font-size: 27px;
                 text-indent: 2em;
-                padding: 30px 0 50px;
+                padding: 30px 80px 50px;
                 font-weight: 500;
-                animation: fadeInDown 1s ease 0s both;
+                line-height: 40px;
+                font-family: PingFang SC-Regular;
+                //animation: fadeInDown 1s ease 0s both;
             }
             .friends {
                 width: 960px;
@@ -943,19 +1062,56 @@
         }
     }
     .footerVue {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        .content {
-            padding-top: 100px;
-            .caseVue {
-                width: 100%;
-                height: 250px;
-                background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 200px;
+        background: #0C121D;
+        .footer-content {
+            margin: 0 auto;
+            width: 1200px;
+            height: 100%;
+            .left {
+                h4 {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #FFFFFF;
+                }
+                ul {
+                    li {
+                        height: 30px;
+                        line-height: 30px;
+                        color: #A0A2A5;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .right {
+                h4 {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #D4D4D4;
+                }
+                img {
+                    width: 120px;
+                    height: 120px;
+                }
+
             }
         }
     }
 }
+
+.content-wrap {
+    margin-top: 100px;
+    background: rgba(255,255,255,0.48);
+    border-radius: 29px;
+    backdrop-filter: blur(10px);
+}
+
 
 
 // 申请加入
@@ -1002,7 +1158,7 @@
 @keyframes fadeInDown {
     0% {
         opacity: 0;
-        transform: translateY(2000px);
+        transform: translateY(200px);
     }
     100% {
         opacity: 1;
@@ -1012,7 +1168,7 @@
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
-        transform: translate(-2000px);
+        transform: translate(-200px);
     }
     100% {
         opacity: 1;
@@ -1022,7 +1178,7 @@
 @keyframes fadeInRight {
     0% {
         opacity: 0;
-        transform: translate(2000px);
+        transform: translate(200px);
     }
     100% {
         opacity: 1;
@@ -1043,31 +1199,30 @@
     0% {
         transform: translate(10px);
     }
+
+    50% {
+        transform: translate(0px);
+    }
+
     100% {
-        transform: translate(0);
+        transform: translate(10px);
     }
 }
+
+
 @keyframes fadeinBg {
     0% {
-        background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
-        opacity: 1;
+        background-position: 0% 50%;
     }
-    25% {
-        background: linear-gradient(131deg,#0bcbd4,#02A7A0 51%,#7d3ffc);
-        opacity: 0.7;
-    }
+
     50% {
-        background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
-        opacity: 0.85;
+        background-position: 100% 0%;
     }
-    75% {
-        background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
-        opacity: 0.7;
-    }
+
     100% {
-        background: linear-gradient(131deg,#f05b77,#ff754a 51%,#ffd75d);
-        opacity: 1;
+        background-position: 0% 50%;
     }
 }
+
 
 

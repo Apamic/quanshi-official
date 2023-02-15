@@ -23,11 +23,11 @@
           <p>免费直播模板库</p>
         </li>
         <li>
-          <img src="../assets/icon4.png" alt="">
-          <p>免费运营工具库</p>
+          <img src="../assets/icon5.png" alt="">
+          <p>短视频合成不限时</p>
         </li>
         <li>
-          <img src="../assets/icon4.png" alt="">
+          <img src="../assets/icon6.png" alt="">
           <p>全年导出不限时</p>
         </li>
       </ul>

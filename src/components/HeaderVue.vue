@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="line" :style="{ background: color }"></div>
-        <h4 @click="isLoginVue = true" :style="{ color: color}" v-if="!isLogin">登录/注册</h4>
+        <h4 @click="$router.push({name: 'logIn'})" :style="{ color: color}" v-if="!isLogin">登录/注册</h4>
         <div class="user el-icon-user" :style="{ color: color}" v-else></div>
       </div>
     </div>
@@ -197,7 +197,7 @@ export default {
       }
 
 
-      
+
     }
   }
 }
