@@ -17,7 +17,7 @@
             </div>
             <div class="input-wrap flex">
               <img src="../assets/login/lock-icon.png" class="icon">
-              <input v-model="code" placeholder="请输入验证码">
+              <input v-model="code"  style="width: 60%;" placeholder="请输入验证码">
               <div class="code-but" v-if="!isSend" @click.stop="onSend()">
                 获取验证码
               </div>
@@ -141,7 +141,7 @@ export default {
   line-height: 70px;
 
   input {
-    margin-left: 20px;
+    padding-left: 20px;
     font-size: 20px;
   }
 

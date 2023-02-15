@@ -71,15 +71,32 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-bottom: 0.2rem;
     color: #D4D4D4;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    border-bottom: 1px solid #363A43;
     .tabs-item {
       font-size: .14rem;
     }
 
     .active {
+      position: relative;
       color: #02A7A0;
       font-size: 0.18rem;
       font-weight: bold;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        display: block;
+        width: 80%;
+        height: 1px;
+        background: #02A7A0;
+      }
+
     }
   }
 
