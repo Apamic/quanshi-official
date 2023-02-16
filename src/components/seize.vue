@@ -8,13 +8,13 @@
     <div class="swiper">
       <swiper ref="mySwiper" :options="swiperOptions">
         <swiperSlide>
-          <img src="../assets/1.png" alt="">
+          <img src="../assets/t1.png" alt="">
         </swiperSlide>
         <swiperSlide>
-          <img src="../assets/2.png" alt="">
+          <img src="../assets/t2.png" alt="">
         </swiperSlide>
         <swiperSlide>
-          <img src="../assets/3.png" alt="">
+          <img src="../assets/t3.png" alt="">
         </swiperSlide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -40,14 +40,14 @@ export default {
         loop: true,
         autoplay: true,
         effect: 'coverflow',
-        slidesPerView: 3,
+        slidesPerView: 2,
         centeredSlides: true,
         coverflowEffect: {
           rotate: 0,
-          stretch: 10,
-          depth: 60,
-          modifier: 2,
-          slideShadows: true
+          // stretch: 10,
+          // depth: 60,
+          // modifier: 2,
+          // slideShadows: true
         }
       }
     }

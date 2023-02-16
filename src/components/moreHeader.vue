@@ -4,7 +4,7 @@
 <!--    <img src="../assets/logo_dark.png">-->
     <div class="right">
         <div class="code">扫码咨询</div>
-        <div class="login">登录/注册</div>
+        <div class="login" @click="$router.push({name: 'logIn'})">登录/注册</div>
     </div>
   </div>
 </template>
@@ -42,9 +42,11 @@ export default {
         height: 0.24rem;
         line-height: 0.24rem;
         text-align: center;
-        background: linear-gradient(to left, #5D1983, #02A7A0);
+        background: linear-gradient(135deg, #5D1983, #02A7A0,#f05b77,#ffd75d);
+        background-size: 400% 400%;
         border-radius: 5px;
         color: #fff;
+        animation: fadeinBg 5s ease 0s infinite both;
       }
 
       .login {
@@ -52,4 +54,34 @@ export default {
           color: #02A7A0;
       }
     }
+
+
+    @keyframes fadeinBg {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 0%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes fadeinHover {
+      0% {
+        transform: translate(10px);
+      }
+
+      50% {
+        transform: translate(0px);
+      }
+
+      100% {
+        transform: translate(10px);
+      }
+    }
+
 </style>

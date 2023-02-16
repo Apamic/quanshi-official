@@ -56,7 +56,24 @@
 
 <script>
 export default {
-  name: "cooperation"
+  name: "cooperation",
+  mounted() {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach( entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('active')
+        }
+
+      })
+    })
+
+    const boxList = document.querySelectorAll('.page4')
+
+
+    boxList.forEach((el) => {
+      io.observe(el)
+    })
+  }
 }
 </script>
 
@@ -127,7 +144,7 @@ export default {
     }
 
     .text {
-      padding-top: 0.2rem;
+      padding: 0.2rem 0;
       color: #A0A2A5;
       font-size: 0.12rem;
     }
@@ -142,16 +159,88 @@ export default {
     height: 0.38rem;
     font-size: 0.16rem;
     color: #fff;
-    background: linear-gradient(to left, #5D1983, #02A7A0);
+    background: linear-gradient(135deg, #5D1983, #02A7A0,#f05b77,#ffd75d);
+    background-size: 400% 400%;
     border-radius: 8px;
+    animation: fadeinBg 5s ease 0s infinite both;
     img {
       margin-left: 0.05rem;
       width: 0.17rem;
       height: 0.17rem;
+      animation: fadeinHover 1s linear 0s infinite both;
     }
   }
 
 
+  .active {
+    h1 {
+      animation: fadeInRight 2s ease 0s normal;
+    }
 
+    h6 {
+      animation: fadeInRight 2.5s ease 0s normal;
+    }
+
+    p {
+      animation: fadeInRight 3.5s ease 0s normal;
+    }
+
+    .card {
+      animation: fadeInDown 3s ease 0s normal;
+    }
+
+  }
+
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translate(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeinHover {
+    0% {
+      transform: translate(10px);
+    }
+
+    50% {
+      transform: translate(0px);
+    }
+
+    100% {
+      transform: translate(10px);
+    }
+  }
+
+
+  @keyframes fadeinBg {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 0%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 </style>

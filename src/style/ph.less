@@ -3,7 +3,7 @@
   padding-left: 0.2rem;
   padding-right: 0.2rem;
   width: 100%;
-  height: 100vh;
+  //height: 100vh;
   background: #0C121D;
 }
 
@@ -15,12 +15,15 @@
   height: 0.38rem;
   font-size: 0.16rem;
   color: #fff;
-  background: linear-gradient(to left, #5D1983, #02A7A0);
+  background: linear-gradient(135deg, #5D1983, #02A7A0,#f05b77,#ffd75d);
+  background-size: 400% 400%;
   border-radius: 8px;
+  animation: fadeinBg 5s ease 0s infinite both;
   img {
     margin-left: 0.05rem;
     width: 0.17rem;
     height: 0.17rem;
+    animation: fadeinHover 1s linear 0s infinite both;
   }
 }
 
@@ -31,6 +34,7 @@
   background: url("../assets/move/home-bg1.png") no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  height: 100vh;
 
   h1 {
     padding-top: 1.5rem;
@@ -56,6 +60,7 @@
 }
 
 .page2 {
+  margin-top: 2px;
    h1 {
      text-align: center;
      color: #fff;
@@ -147,6 +152,21 @@
         height: 3.393rem;
       }
     }
+  }
+}
+
+
+@keyframes fadeinBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
 

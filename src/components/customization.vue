@@ -39,6 +39,7 @@ export default {
 <style lang="less" scoped>
 .page2 {
   h2 {
+    margin-bottom: 0.1rem;
     font-size: .18rem;
     color: #fff;
     text-align: right;

@@ -46,6 +46,24 @@ export default {
     }
   },
 
+  mounted() {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach( entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('active')
+        }
+
+      })
+    })
+
+    const boxList = document.querySelectorAll('.page3')
+
+
+    boxList.forEach((el) => {
+      io.observe(el)
+    })
+  },
+
   methods: {
     arrowClick(type) {
 
@@ -109,4 +127,30 @@ export default {
   }
 
 }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.active {
+  h1 {
+    animation: fadeInRight 1.5s ease 0s normal;
+  }
+
+  h2 {
+    animation: fadeInRight 2s ease 0s normal;
+  }
+
+  p {
+    animation: fadeInRight 2.5s ease 0s normal;
+  }
+}
+
 </style>

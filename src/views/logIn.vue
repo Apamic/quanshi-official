@@ -1,9 +1,9 @@
 <template>
   <div class="container flex-center align-center">
     <div class="content flex">
-      <img src="../assets/login/login.png" style="width:652px;height: 605px;">
+      <img class="image" src="../assets/login/login.png">
       <div class="login-wrap">
-        <img style="display: block; margin: 30px auto;" src="../assets/logo_dark.png">
+        <img class="logo" style="display: block; margin: 30px auto;" src="../assets/logo_dark.png">
         <div class="wrap">
           <div class="flex tabs">
             <div class="flex-1" :class=" current == 0 ? 'active' : '' " @click="current = 0">验证码登录</div>
@@ -42,7 +42,7 @@
           </template>
 
 
-          <div class="login-but" style="margin-top: 50px">
+          <div class="login-but">
             注册 / 登录
           </div>
 
@@ -106,9 +106,17 @@ export default {
     border-radius: 50px;
     box-shadow: 0 26px 50px 1px rgba(0, 0, 0, 0.15);
 
+    .image {
+      width:652px;
+      height: 605px;
+    }
+
     .login-wrap {
       width: 424px;
-
+      .logo {
+        display: block;
+        margin: 30px auto;
+      }
       .wrap {
         .tabs {
           height: 50px;
@@ -182,6 +190,7 @@ input::placeholder {
 }
 
 .login-but {
+  margin-top: 50px;
   height: 64px;
   line-height: 64px;
   color: #fff;
@@ -197,5 +206,92 @@ input::placeholder {
   width: 33px;
   height: 33px;
 }
+
+@media screen and (max-width: 900px) {
+
+  .container {
+    .content {
+      flex-direction: column;
+      padding: 0 0.5rem;
+      margin: 0 0.2rem;
+      width: 100%;
+      height: 4rem;
+      .image {
+        display: none;
+        margin: 0 auto;
+        width:3.26rem;
+        height: 3.02rem;
+      }
+
+      .login-wrap {
+        width: 100%;
+        .logo {
+          width: .9rem;
+          height: 0.7rem;
+        }
+        .wrap {
+          .tabs {
+            height: 0.4rem;
+            line-height: 0.4rem;
+
+            div {
+              font-size: 0.18rem;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .input-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 0.1rem;
+    padding: 0 0 0 0.15rem;
+    height: 0.35rem;
+    line-height: 0.35rem;
+
+    input {
+      padding-left: 0.1rem;
+      font-size: 0.1rem;
+    }
+
+  }
+
+  input::placeholder {
+    color: #989898;
+  }
+
+  .code-but {
+    width: 0.8rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    color: #fff;
+    font-size: 0.1rem;
+  }
+
+  .send-but {
+    width: 0.8rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    font-size: 0.1rem;
+  }
+
+  .icon {
+    width: 0.15rem;
+    height: 0.15rem;
+  }
+
+  .login-but {
+    margin-top: 0.3rem;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    font-size: 0.1rem;
+
+  }
+
+}
+
 
 </style>

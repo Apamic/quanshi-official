@@ -69,14 +69,14 @@ export default {
         loop : true,
         autoplay:true,
         effect : 'coverflow',
-        slidesPerView: 3,
+        slidesPerView: 2,
         centeredSlides: true,
         coverflowEffect: {
           rotate: 0,
           stretch: 10,
           depth: 60,
           modifier: 2,
-          slideShadows : true
+          // slideShadows : true
         },
       }
     }
@@ -106,7 +106,9 @@ export default {
   height: 0.38rem;
   font-size: 0.16rem;
   color: #fff;
-  background: linear-gradient(to left, #5D1983, #02A7A0);
+  background: linear-gradient(135deg, #5D1983, #02A7A0,#f05b77,#ffd75d);
+  background-size: 400% 400%;
+  animation: fadeinBg 5s ease 0s infinite both;
   border-radius: 8px;
   img {
     margin-left: 0.05rem;
@@ -170,4 +172,20 @@ export default {
     }
   }
 }
+
+
+@keyframes fadeinBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 </style>

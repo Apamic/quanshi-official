@@ -142,13 +142,13 @@
                           <el-carousel :interval="3000" type="card" height="450px" class="elCarousel"
                                        indicator-position="none">
                             <el-carousel-item>
-                              <img src="../assets/1.png" alt="">
+                              <img src="../assets/t1.png" alt="">
                             </el-carousel-item>
                             <el-carousel-item>
-                              <img src="../assets/2.png" alt="">
+                              <img src="../assets/t2.png" alt="">
                             </el-carousel-item>
                             <el-carousel-item>
-                              <img src="../assets/3.png" alt="">
+                              <img src="../assets/t3.png" alt="">
                             </el-carousel-item>
                           </el-carousel>
                         </div>
@@ -446,9 +446,11 @@
           Let your live broadcast stand out
         </p>
 
-        <div class="but1">
-          <span>立即体验</span>
-          <img src="../assets/more.png" alt="">
+        <div class="an">
+          <div class="but1">
+            <span>立即体验</span>
+            <img src="../assets/more.png" alt="">
+          </div>
         </div>
       </div>
 
@@ -473,11 +475,8 @@
         </template>
       </div>
 
-
       <div class="part page3">
-
         <imageCustom></imageCustom>
-
       </div>
 
       <div class="part page4">
@@ -540,6 +539,24 @@ export default {
 
     window.addEventListener('mousewheel', debounce(this.handleScrolls), false)
     window.addEventListener('DOMMouseScroll', debounce(this.handleScrolls), false)
+
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach( entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('active')
+        }
+
+      })
+    })
+
+    const boxList = document.querySelectorAll('.part')
+
+
+    boxList.forEach((el) => {
+      io.observe(el)
+    })
+
 
   },
   components: {
@@ -611,4 +628,61 @@ export default {
 <style lang="less" scoped>
 @import "../style/pc.less";
 @import "../style/ph.less";
+
+.active {
+  h1 {
+    animation: fadeInRight 1s ease 0s normal;
+  }
+
+  h2 {
+    animation: fadeInRight 1.5s ease 0s normal;
+  }
+
+  p {
+    animation: fadeInRight 2s ease 0s normal;
+  }
+
+  .an {
+    animation: fadeInRight 2.5s ease 0s normal;
+  }
+
+  .tabs-wrap {
+    animation: fadeInDown 1.5s ease 0s normal;
+  }
+
+}
+
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 </style>
