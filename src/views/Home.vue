@@ -10,8 +10,7 @@
 
         <swiper class="container-swiper" :options="swiperOption" @slideChange="onSlideChange" @swiper="onSwiper"
                 ref="mySwiper">
-          <!--                <el-carousel height="100vh" direction="vertical" :loop="false" :autoplay="false" ref="carousel"-->
-          <!--                    :initial-index="current" @setActiveItem="setActiveItem" indicator-position="none">-->
+
           <!-- 首页 -->
           <swiper-slide>
             <div class="homeVue">
@@ -317,10 +316,7 @@
                           </div>
 
                           <div class="tip"><span style="font-size: 24px;font-weight: bold;">注</span>：渠道合作5000起，具体咨询招商经理。要成为公司渠道合伙人必须要先体验和使用公司数字人产品。</div>
-<!--                          <div class="btns">-->
-<!--                            <div class="btn">福利</div>-->
-<!--                            <div class="btn">权益</div>-->
-<!--                          </div>-->
+
                         </div>
                       </div>
                       <div class="btnVue">
@@ -348,33 +344,6 @@
                   </p>
                 </div>
 
-<!--                <div class="friends">-->
-<!--                  <div class="title">合作伙伴</div>-->
-<!--                  <div class="friendVue">-->
-<!--                    <el-carousel height="290px" indicator-position="none" :autoplay="false" :interval="3000"-->
-<!--                                 :loop="true">-->
-<!--                      <el-carousel-item>-->
-<!--                        <div class="friendDiv">-->
-<!--                          <div class="friend">-->
-<!--                            <img src="../assets/logo_dark.png" alt="">-->
-<!--                          </div>-->
-<!--                          <div class="friend">-->
-<!--                            <img src="../assets/logo.jpg" alt="">-->
-<!--                          </div>-->
-<!--                          <div class="friend">-->
-<!--                            <img src="../assets/logo1.png" alt="">-->
-<!--                          </div>-->
-<!--                        </div>-->
-<!--                        <div class="friendDiv" style="margin-top: 30px;">-->
-<!--                          <div class="friend"></div>-->
-<!--                          <div class="friend"></div>-->
-<!--                          <div class="friend"></div>-->
-<!--                        </div>-->
-<!--                      </el-carousel-item>-->
-<!--                    </el-carousel>-->
-<!--                  </div>-->
-<!--                </div>-->
-                <!-- <div class="footer" v-if="isFooter"></div> -->
 
               </div>
 
@@ -407,15 +376,6 @@
               </div>
             </div>
           </swiper-slide>
-
-          <!--                    <el-carousel-item name="6">-->
-          <!--                        <div class="footerVue">-->
-          <!--                            <div class="content" v-if="current === 6">-->
-          <!--                                <div class="caseVue"></div>-->
-          <!--                            </div>-->
-          <!--                        </div>-->
-          <!--                    </el-carousel-item>-->
-          <!--                </el-carousel>-->
         </swiper>
       </div>
 
@@ -533,12 +493,13 @@ export default {
     }
   },
   created() {
+    this.$nextTick(() => {
 
+      window.addEventListener('mousewheel', debounce(this.handleScrolls), false)
+      window.addEventListener('DOMMouseScroll', debounce(this.handleScrolls), false)
+    })
   },
   mounted() {
-
-    window.addEventListener('mousewheel', debounce(this.handleScrolls), false)
-    window.addEventListener('DOMMouseScroll', debounce(this.handleScrolls), false)
 
 
     const io = new IntersectionObserver(entries => {
@@ -590,12 +551,11 @@ export default {
       }
       this.$refs.mySwiper.swiperInstance.slideTo(this.current, 600, false)
 
-      console.log(e.deltaY,'e')
+      //console.log(e.deltaY,'e')
     },
 
     onSlideChange(e) {
 
-      //console.log(this.$refs.mySwiper.swiperInstance.activeIndex)
       this.current = this.$refs.mySwiper.swiperInstance.activeIndex
 
     },
