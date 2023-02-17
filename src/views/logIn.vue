@@ -269,6 +269,7 @@ input::placeholder {
     line-height: 0.32rem;
     color: #fff;
     font-size: 0.1rem;
+
   }
 
   .send-but {
@@ -289,6 +290,12 @@ input::placeholder {
     line-height: 0.34rem;
     font-size: 0.1rem;
 
+  }
+
+  .code-but:hover,
+  .login-but:hover {
+    color: #fff;
+    background: #02A7A0;
   }
 
 }

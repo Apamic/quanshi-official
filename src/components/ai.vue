@@ -72,10 +72,10 @@ export default {
         slidesPerView: 2,
         centeredSlides: true,
         coverflowEffect: {
-          rotate: 0,
-          stretch: 10,
-          depth: 60,
-          modifier: 2,
+          // rotate: 0,
+          // stretch: 10,
+          // depth: 60,
+          // modifier: 2,
           // slideShadows : true
         },
       }
