@@ -6,14 +6,14 @@
        </div>
        <div class="flex flex-between" style="margin-top: 0.2rem;">
          <ul>
-           <li>商业合作：XXXXX</li>
-           <li>媒体咨询：XXXXX</li>
-           <li>公司地址：XXXXX</li>
+           <li>商业合作：CNAIA13031119807</li>
+<!--           <li>媒体咨询：XXXXX</li>-->
+           <li>公司地址：湖北省武汉市硚口区凯德西城T2写字楼20层</li>
          </ul>
 
          <div>
-           <img style="width: .76rem;height: .76rem;margin-right: 0.2rem" src="../assets/code.png">
-           <img style="width: .76rem;height: .76rem;" src="../assets/code.png">
+           <img style="width: .76rem;height: .76rem;" src="../assets/code.jpg">
+<!--           <img style="width: .76rem;height: .76rem;" src="../assets/code.png">-->
          </div>
 
        </div>

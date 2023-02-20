@@ -14,7 +14,7 @@
           <img src="../assets/erweima.png" />
           <span>扫码咨询</span>
           <div class="codeVue" v-if="isScan">
-            <img src="../assets/code.png">
+            <img src="../assets/code.jpg">
           </div>
         </div>
         <div class="line" :style="{ background: color }"></div>

@@ -56,6 +56,7 @@ export default {
 
   ul {
     li {
+      margin-bottom: 0.1rem;
       h4 {
         height: 0.3rem;
         line-height: 0.3rem;

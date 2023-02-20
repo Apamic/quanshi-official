@@ -150,6 +150,7 @@ export default {
   }
 
   h4 {
+    margin-top: 0.2rem;
     line-height: 0.4rem;
     height: 0.4rem;
     font-size: 0.15rem;

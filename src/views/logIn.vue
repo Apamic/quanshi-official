@@ -7,7 +7,7 @@
         <div class="wrap">
           <div class="flex tabs">
             <div class="flex-1" :class=" current == 0 ? 'active' : '' " @click="current = 0">验证码登录</div>
-            <div class="flex-1" :class=" current == 1 ? 'active' : '' " @click="current = 1">密码登录</div>
+<!--            <div class="flex-1" :class=" current == 1 ? 'active' : '' " @click="current = 1">密码登录</div>-->
           </div>
 
           <template v-if="current == 0">
@@ -42,7 +42,7 @@
           </template>
 
 
-          <div class="login-but">
+          <div class="login-but" @click="login()">
             注册 / 登录
           </div>
 
@@ -68,6 +68,11 @@ export default {
     }
   },
 
+  mounted() {
+
+  },
+
+
   methods: {
 
     onCountSeconds() {
@@ -86,8 +91,36 @@ export default {
     },
 
     onSend() {
-      this.isSend = true
-      this.onCountSeconds()
+
+      let reg = /^1[3-9]\d{9}$/
+
+      if (reg.test(this.phone)) {
+        this.$axios.post(`/ajax/sendCode?phoneEmail=${this.phone}`,{
+        }).then(res => {
+          this.isSend = true
+          this.onCountSeconds()
+          console.log('成功')
+        })
+      } else {
+        this.$message.error('请输入正确的手机号！')
+        return
+      }
+
+    },
+
+    login() {
+
+      if (!this.phone) {
+        return this.$message.error('请输入正确的手机号！')
+      }
+
+      if (!this.code) {
+        return  this.$message.error('请输入正确的验证码！')
+      }
+
+      this.$axios.post(`/front/codeLogin?name=${this.phone}&code=${this.code}`,{}).then(res => {
+        console.log('登录成功！')
+      })
     }
 
   }

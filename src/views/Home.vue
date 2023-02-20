@@ -98,8 +98,10 @@
                           <img src="../assets/son.png" class="liSon">
                         </div>
                         <div class="sonRight">
-                          <div class="name">定制AI直播数字人</div>
-                          <div class="name">对接专属团队</div>
+                          <div style="margin-bottom: 26px;">
+                            <div class="name">定制AI直播数字人</div>
+                            <div class="name">对接专属团队</div>
+                          </div>
                           <div class="label">专业定制服务:</div>
                           <div class="info">提供定制化制作流程，保障服务质量和最终克隆效果</div>
                           <div class="label">音色深度还原:</div>
@@ -261,7 +263,7 @@
                       </div>
                       <div class="btnVue">
                         <div class="btn">
-                          <span>立即体验</span>
+                          <span>立即开通</span>
                           <img src="../assets/more.png">
                         </div>
                       </div>
@@ -355,9 +357,9 @@
                     <div class="left">
                       <h4>联系我们</h4>
                       <ul>
-                        <li>商业合作：XXXXX</li>
-                        <li>媒体咨询：XXXXX</li>
-                        <li>公司地址：XXXXX</li>
+                        <li>商业合作：CNAIA13031119807</li>
+<!--                        <li>媒体咨询：湖北省武汉市硚口区凯德西城T2写字楼20层</li>-->
+                        <li>公司地址：湖北省武汉市硚口区凯德西城T2写字楼20层</li>
                       </ul>
                     </div>
                   </div>
@@ -367,8 +369,8 @@
                      </h4>
 
                     <div class="code">
-                      <img src="../assets/code.png" style="margin-right: 20px;">
-                      <img src="../assets/code.png" >
+                      <img src="../assets/code.jpg" style="margin-right: 20px;">
+<!--                      <img src="../assets/code.png" >-->
                     </div>
 
                   </div>
@@ -377,6 +379,7 @@
             </div>
           </swiper-slide>
         </swiper>
+
       </div>
 
 
@@ -450,6 +453,10 @@
       <pageFooting></pageFooting>
 
     </div>
+
+
+    <paymentPopup></paymentPopup>
+
   </div>
 </template>
 
@@ -465,6 +472,8 @@ import imageCustom from "@/components/imageCustom";
 import member from "@/components/member";
 import cooperation from "@/components/cooperation";
 import pageFooting from "@/components/pageFooting";
+
+import paymentPopup from "@/components/paymentPopup";
 
 
 import HeaderVue from '@/components/HeaderVue.vue'
@@ -532,7 +541,8 @@ export default {
     imageCustom,
     member,
     cooperation,
-    pageFooting
+    pageFooting,
+    paymentPopup
   },
 
   methods: {

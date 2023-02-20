@@ -135,7 +135,7 @@ export default {
         }
 
         div {
-          margin-bottom: 0.08rem;
+          margin-bottom: 0.18rem;
           width: 2.7rem;
           height: 0.24rem;
           line-height: 0.24rem;

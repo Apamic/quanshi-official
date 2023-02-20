@@ -144,7 +144,7 @@ export default {
     }
 
     .text {
-      padding: 0.2rem 0;
+      padding: 0 0 0.3rem;
       color: #A0A2A5;
       font-size: 0.12rem;
     }

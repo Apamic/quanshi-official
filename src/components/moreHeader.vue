@@ -3,15 +3,29 @@
     <img src="../assets/logo_light.png">
 <!--    <img src="../assets/logo_dark.png">-->
     <div class="right">
-        <div class="code">扫码咨询</div>
+        <div class="code" @click="showCode = !showCode">扫码咨询</div>
         <div class="login" @click="$router.push({name: 'logIn'})">登录/注册</div>
+
+        <img v-show="showCode" src="../assets/code.jpg" class="code-img">
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "moreHeader"
+  name: "moreHeader",
+  data() {
+    return {
+      showCode: false,
+    }
+
+  },
+  methods: {
+
+  }
+
+
 }
 </script>
 
@@ -34,6 +48,7 @@ export default {
     }
 
     .right {
+      position: relative;
       display: flex;
       font-size: 0.12rem;
       .code {
@@ -52,6 +67,13 @@ export default {
       .login {
           line-height: 0.24rem;
           color: #02A7A0;
+      }
+
+      .code-img {
+        position: absolute;
+        top: 0.3rem;
+        width: 1rem;
+        height: 1rem;
       }
     }
 
