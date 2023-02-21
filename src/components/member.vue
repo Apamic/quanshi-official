@@ -33,6 +33,12 @@
             专属数字人直播培训
           </div>
         </div>
+
+        <div class="but1" style="margin: 0.2rem auto 0;" @click.stop="payShow()">
+          <span>立即开通</span>
+          <img src="../assets/more.png">
+        </div>
+
       </div>
 
       <h4>
@@ -69,6 +75,12 @@ export default {
     })
   },
 
+  methods: {
+    payShow() {
+      this.$emit('payShow')
+    }
+  }
+
 
 }
 </script>
@@ -94,7 +106,7 @@ export default {
     padding: 0.2rem 0.15rem;
     margin-top: .25rem;
     width: 100%;
-    height: 1.6rem;
+    height: 2.2rem;
     background: #252A34;
     border-radius: 16px;
     .price {
@@ -164,6 +176,27 @@ export default {
 
 }
 
+.but1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.36rem;
+  height: 0.38rem;
+  font-size: 0.16rem;
+  color: #fff;
+  background: linear-gradient(135deg, #5D1983, #02A7A0,#f05b77,#ffd75d);
+  background-size: 400% 400%;
+  border-radius: 8px;
+  animation: fadeinBg 5s ease 0s infinite both;
+  img {
+    margin-left: 0.05rem;
+    width: 0.17rem;
+    height: 0.17rem;
+    animation: fadeinHover 1s linear 0s infinite both;
+  }
+}
+
+
 .active {
   h1 {
     animation: fadeInRight 2s ease 0s normal;
@@ -200,5 +233,34 @@ export default {
   }
 }
 
+
+@keyframes fadeinBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@keyframes fadeinHover {
+  0% {
+    transform: translate(10px);
+  }
+
+  50% {
+    transform: translate(0px);
+  }
+
+  100% {
+    transform: translate(10px);
+  }
+}
 
 </style>

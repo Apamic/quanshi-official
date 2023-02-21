@@ -262,7 +262,7 @@
                         </div>
                       </div>
                       <div class="btnVue">
-                        <div class="btn">
+                        <div class="btn" @click.stop="payShow()">
                           <span>立即开通</span>
                           <img src="../assets/more.png">
                         </div>
@@ -443,7 +443,7 @@
       </div>
 
       <div class="part page4">
-        <member></member>
+        <member @payShow="payShow"></member>
       </div>
 
       <div class="part page5">
@@ -455,7 +455,7 @@
     </div>
 
 
-    <paymentPopup></paymentPopup>
+    <paymentPopup ref="paymentPopup"></paymentPopup>
 
   </div>
 </template>
@@ -590,6 +590,11 @@ export default {
       } else {
         this.$refs.carouselCostom.prev()
       }
+    },
+
+
+    payShow() {
+      this.$refs.paymentPopup.show =  !this.$refs.paymentPopup.show
     }
   }
 }
