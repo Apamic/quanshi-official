@@ -257,7 +257,7 @@ export default {
     .popup-head {
       padding: 0 0.2rem;
       height: 0.5rem;
-      line-height: 100px;
+      line-height: 0.5rem;
       font-size: 0.15rem;
       font-weight: 700;
       background: #E4F5F4;

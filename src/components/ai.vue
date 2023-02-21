@@ -51,7 +51,7 @@
         </ul>
       </div>
 
-      <div class="but1">
+      <div class="but1" @click.stop="consultShow()">
         <span>了解一下</span>
         <img src="../assets/more.png" alt="">
       </div>
@@ -87,7 +87,9 @@ export default {
   },
 
   methods: {
-
+    consultShow() {
+      this.$emit('consultShow')
+    }
   },
 
   components: {

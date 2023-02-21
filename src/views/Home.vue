@@ -70,7 +70,7 @@
                           </div>
 
                           <div class="btnVue">
-                            <div class="btn">
+                            <div class="btn" @click.stop="consultShow()">
                               <span>了解一下</span>
                               <img src="../assets/more.png" alt="">
                             </div>
@@ -425,7 +425,7 @@
           </div>
         </div>
         <template v-if="son == 0">
-          <ai></ai>
+          <ai @consultShow="consultShow"></ai>
         </template>
         <template v-if="son == 1">
           <customization></customization>
@@ -457,6 +457,8 @@
 
     <paymentPopup ref="paymentPopup"></paymentPopup>
 
+    <consultPopup ref="consultPopup"></consultPopup>
+
   </div>
 </template>
 
@@ -474,7 +476,7 @@ import cooperation from "@/components/cooperation";
 import pageFooting from "@/components/pageFooting";
 
 import paymentPopup from "@/components/paymentPopup";
-
+import consultPopup from "@/components/consultPopup";
 
 import HeaderVue from '@/components/HeaderVue.vue'
 import moreHeader from '@/components/moreHeader.vue'
@@ -542,7 +544,8 @@ export default {
     member,
     cooperation,
     pageFooting,
-    paymentPopup
+    paymentPopup,
+    consultPopup
   },
 
   methods: {
@@ -595,7 +598,12 @@ export default {
 
     payShow() {
       this.$refs.paymentPopup.show =  !this.$refs.paymentPopup.show
+    },
+
+    consultShow() {
+      this.$refs.consultPopup.show =  !this.$refs.consultPopup.show
     }
+
   }
 }
 </script>
