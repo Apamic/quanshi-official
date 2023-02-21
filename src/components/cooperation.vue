@@ -39,7 +39,7 @@
 
     <div style="padding-top: 0.2rem;">
 
-      <div class="but1" style="margin: 0 auto;">
+      <div class="but1" style="margin: 0 auto;" @click.stop="questionShow()">
         <span>申请加入</span>
         <img src="../assets/more.png">
       </div>
@@ -73,6 +73,12 @@ export default {
     boxList.forEach((el) => {
       io.observe(el)
     })
+  },
+
+  methods: {
+    questionShow() {
+      this.$emit('questionShow')
+    }
   }
 }
 </script>

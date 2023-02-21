@@ -322,7 +322,7 @@
                         </div>
                       </div>
                       <div class="btnVue">
-                        <div class="btn">
+                        <div class="btn" @click.stop="questionShow()">
                           <span>申请加入</span>
                           <img src="../assets/more.png">
                         </div>
@@ -383,16 +383,6 @@
       </div>
 
 
-      <!-- 申请加入弹框 -->
-      <div class="joinmask" v-if="isJoin">
-        <div class="joinVue">
-          <div class="join">
-            <div class="close" @click="isJoin = false">
-              <img src="../assets/close.png">
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- ========================================================================================================================================================= -->
@@ -447,7 +437,7 @@
       </div>
 
       <div class="part page5">
-        <cooperation></cooperation>
+        <cooperation @questionShow="questionShow"></cooperation>
       </div>
 
       <pageFooting></pageFooting>
@@ -458,6 +448,9 @@
     <paymentPopup ref="paymentPopup"></paymentPopup>
 
     <consultPopup ref="consultPopup"></consultPopup>
+
+    <questionPopup ref="questionPopup"></questionPopup>
+
 
   </div>
 </template>
@@ -477,6 +470,7 @@ import pageFooting from "@/components/pageFooting";
 
 import paymentPopup from "@/components/paymentPopup";
 import consultPopup from "@/components/consultPopup";
+import questionPopup from "@/components/questionPopup";
 
 import HeaderVue from '@/components/HeaderVue.vue'
 import moreHeader from '@/components/moreHeader.vue'
@@ -545,7 +539,8 @@ export default {
     cooperation,
     pageFooting,
     paymentPopup,
-    consultPopup
+    consultPopup,
+    questionPopup
   },
 
   methods: {
@@ -602,6 +597,10 @@ export default {
 
     consultShow() {
       this.$refs.consultPopup.show =  !this.$refs.consultPopup.show
+    },
+
+    questionShow() {
+      this.$refs.questionPopup.show =  !this.$refs.questionPopup.show
     }
 
   }
