@@ -42,9 +42,9 @@
               </div>
             </div>
 
-            <ul class="list-wrap">
+            <ul class="list-wrap" id="list">
 
-              <li v-for="(item,index) in 3" :key="index">
+              <li v-for="(item,index) in 10" :key="index">
                 <div class="label">购买月卡</div>
                 <div>
                   <div class="price"><span class="num">1299</span>元</div>
@@ -76,6 +76,16 @@ export default {
       current: 0,
       isScan: false
     }
+  },
+
+  mounted() {
+
+    if (window.innerWidth <= 900 ) {
+      let list = document.getElementById('list')
+      list.style.height =  ((window.innerHeight - list.getBoundingClientRect().top)) + 'px'
+      console.log(list.getBoundingClientRect())
+    }
+
   },
 
   methods: {
@@ -244,6 +254,10 @@ export default {
 
         .list-wrap {
           padding: 30px;
+          height: calc(100% - 80px);
+          overflow-y: scroll;
+          -ms-overflow-style:none;
+          overflow:-moz-scrollbars-none;
           li {
             display: flex;
             justify-content: space-between;
@@ -361,7 +375,7 @@ export default {
       .card {
         display: block;
         width: 100%;
-        height: 800px;
+        height: 100%;
         background: #0C121D;
         border-radius: 0px;
 
@@ -435,6 +449,11 @@ export default {
 
           .list-wrap {
             padding: 0.15rem;
+            //background: #0C121D;
+
+            overflow-y: scroll;
+            -ms-overflow-style:none;
+            overflow:-moz-scrollbars-none;
             li {
               display: flex;
               justify-content: space-between;
@@ -475,5 +494,6 @@ export default {
 
   }
 
+  ::-webkit-scrollbar{display:none}
 
 </style>
