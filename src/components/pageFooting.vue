@@ -6,13 +6,13 @@
        </div>
        <div class="flex flex-between" style="margin-top: 0.2rem;">
          <ul>
-           <li>商业合作：CNAIA13031119807</li>
+           <li><span>商业合作：</span><div>CNAIA13031119807</div></li>
 <!--           <li>媒体咨询：XXXXX</li>-->
-           <li>公司地址：湖北省武汉市硚口区凯德西城T2写字楼20层</li>
+           <li><span>公司地址：</span><div>湖北省武汉市硚口区凯德西城T2写字楼20层</div></li>
          </ul>
 
          <div>
-           <img style="width: .76rem;height: .76rem;" src="../assets/code.jpg">
+           <img style="margin-left: 0.2rem;width: .76rem;height: .76rem;" src="../assets/code.jpg">
 <!--           <img style="width: .76rem;height: .76rem;" src="../assets/code.png">-->
          </div>
 
@@ -45,7 +45,11 @@ export default {
 ul {
   margin-top: 0.1rem;
   li {
+    display: flex;
     color: #A0A2A5;
+    span {
+      white-space: nowrap;
+    }
   }
 }
 </style>

@@ -10,11 +10,11 @@
           <ul>
             <li class="row">
               <span>姓名<span style="color: red;">*</span></span>
-              <input v-model="name">
+              <input v-model="name" placeholder="请输入您的姓名">
             </li>
             <li class="row">
               <span>手机号<span style="color: red;">*</span></span>
-              <input v-model="phone">
+              <input v-model="phone" placeholder="请输入您的手机号">
             </li>
             <li class="row">
               <span>留言</span>
