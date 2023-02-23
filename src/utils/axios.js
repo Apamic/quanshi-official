@@ -11,12 +11,11 @@ axiosInstance.defaults.baseURL = baseURL
 
 let token = ''
 
-axiosInstance.defaults.headers.common['token'] = token
+axiosInstance.defaults.headers['token'] = token
 axiosInstance.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 
 axiosInstance.interceptors.request.use(
     config => {
-
         if (!config.silence) {
             loadingInstance = Loading.service({
                 lock: false,
@@ -28,7 +27,7 @@ axiosInstance.interceptors.request.use(
 
         if (localStorage.getItem('token') ) {
             token = localStorage.getItem('token')
-            config.headers.common['token'] = token
+            config.headers['token'] = token
         }
         return config;
     }, error => {
@@ -41,8 +40,10 @@ axiosInstance.interceptors.response.use(
      response => {
          loadingInstance.close()
          if (response.data.code != 0) {
-             Message({ message: response.data.msg, showClose: true, type: "error" })
+             Message({ message: response.data.msg, showClose: false, type: "error" })
              // this.$message(`${response.data.msg}`)
+             //return response.data
+            return Promise.reject(response.data)
          } else {
              return response.data
          }

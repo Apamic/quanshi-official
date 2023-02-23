@@ -69,7 +69,7 @@ export default {
   },
 
   mounted() {
-
+    // this.$router.push({name: 'personalCenter'})
   },
 
 
@@ -119,6 +119,13 @@ export default {
       }
 
       this.$axios.post(`/front/codeLogin?name=${this.phone}&code=${this.code}`,{}).then(res => {
+
+        console.log(res)
+
+        localStorage.setItem('token',res.obj.token)
+
+        this.$router.push({name: 'personalCenter'})
+
         console.log('登录成功！')
       })
     }

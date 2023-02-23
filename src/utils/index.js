@@ -13,5 +13,19 @@ const debounce = (func, dalay = 200, immediate = false) => {
       }, dalay)
     }
   }
-   
-  export { debounce }
+
+const getParams = (params) => {
+    let paramsStr = ''
+    Object.keys(params).forEach(item => {
+        if (paramsStr === '') {
+            paramsStr = `${item}=${params[item]}`
+        } else {
+            paramsStr = `${paramsStr}&${item}=${params[item]}`
+        }
+    })
+
+    return paramsStr
+}
+
+
+export { debounce,getParams }

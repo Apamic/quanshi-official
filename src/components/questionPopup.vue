@@ -29,49 +29,49 @@
           <div class="item">
             <span class="label">主体对象</span>
             <div class="selected">
-              <label><input type="radio" name="main-body" v-model="mainBody" value="1">mcn机构</label>
-              <label><input type="radio" name="main-body" v-model="mainBody" value="2">个人</label>
+              <label><input type="radio" name="main-body" v-model="subject" value="mcn机构">mcn机构</label>
+              <label><input type="radio" name="main-body" v-model="subject" value="个人">个人</label>
             </div>
           </div>
           <div class="item">
             <span class="label">已入驻平台（<span style="color: #02A7A0;">多选</span>）</span>
             <div class="selected">
-              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="1">抖音</label>
-              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="2">快手</label>
-              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="3">视频号</label>
-              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="4">b站</label>
-              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="5">全网</label>
+              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="抖音">抖音</label>
+              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="快手">快手</label>
+              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="视频号">视频号</label>
+              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="b站">b站</label>
+              <label class="flex-3"><input type="checkbox" name="platform" v-model="platform" value="全网">全网</label>
             </div>
           </div>
 
           <div class="item">
             <span class="label">粉丝数量</span>
             <div class="selected">
-              <label><input type="radio" name="fans" v-model="fans" value="1">5W以下</label>
-              <label><input type="radio" name="fans" v-model="fans" value="2">5W-50W</label>
-              <label><input type="radio" name="fans" v-model="fans" value="3">50W-100W</label>
-              <label><input type="radio" name="fans" v-model="fans" value="4">100W以上</label>
+              <label><input type="radio" name="fans" v-model="fansNum" value="5W以下">5W以下</label>
+              <label><input type="radio" name="fans" v-model="fansNum" value="5W-50W">5W-50W</label>
+              <label><input type="radio" name="fans" v-model="fansNum" value="50W-100W">50W-100W</label>
+              <label><input type="radio" name="fans" v-model="fansNum" value="100W以上">100W以上</label>
             </div>
           </div>
 
           <div class="item">
             <span class="label">创作方向</span>
-            <input type="text" placeholder="请输入创作方向">
+            <input type="text" placeholder="请输入创作方向" v-model="direction">
           </div>
 
           <div class="item">
             <span class="label">姓名</span>
-            <input type="text" placeholder="请输入姓名">
+            <input type="text" placeholder="请输入姓名" v-model="realName">
           </div>
 
           <div class="item">
             <span class="label">手机号</span>
-            <input type="text" placeholder="请输入手机号">
+            <input type="text" placeholder="请输入手机号" v-model="mobile" >
           </div>
         </div>
 
         <div class="but-wrap">
-          <div class="but">
+          <div class="but" @click.stop="submit()">
             提交
           </div>
         </div>
@@ -82,14 +82,49 @@
 </template>
 
 <script>
+import {getParams} from "@/utils";
+
 export default {
   name: "questionPopup",
   data() {
     return {
       show: false,
-      mainBody: '1',
-      platform: ['1'],
-      fans: '1'
+
+      subject: 'mcn机构',
+      platform: ['抖音'],
+      fansNum: '5W以下',
+      direction: '',
+      realName: '',
+      mobile: '',
+    }
+  },
+
+  watch: {
+    platform() {
+      if (this.platform.length == 0) {
+        this.platform = ['抖音']
+      }
+    }
+  },
+
+  methods: {
+    submit() {
+      let reg = /^1[3-9]\d{9}$/
+
+      if (!this.direction) return this.$message({message: '请输入创作方向',type: "error"})
+      if (!this.realName) return this.$message({message: '请输入姓名',type: "error"})
+      if (!reg.test(this.mobile)) return this.$message({message: '请输入正确的手机号',type: "error"})
+      this.$axios.post(`/search/joinUs?${getParams({
+        subject: this.subject,
+        platform: this.platform,
+        fansNum: this.fansNum,
+        direction: this.direction,
+        realName: this.realName,
+        mobile: this.mobile
+      })}`).then(res => {
+        this.$message({message: '提交成功',type: "success"})
+        this.show = false
+      })
     }
   }
 }

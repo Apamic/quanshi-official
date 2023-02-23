@@ -9,20 +9,29 @@
         <div>
           <ul>
             <li class="row">
-              <span>姓名<span style="color: red;">*</span></span>
+              <span>
+                姓名
+                <span style="color: red;">*</span>
+              </span>
               <input v-model="name" placeholder="请输入您的姓名">
             </li>
             <li class="row">
-              <span>手机号<span style="color: red;">*</span></span>
-              <input v-model="phone" placeholder="请输入您的手机号">
+              <span>
+                手机号
+                <span style="color: red;">*</span>
+              </span>
+              <input v-model="mobile" placeholder="请输入您的手机号">
             </li>
             <li class="row">
-              <span>留言</span>
-              <textarea v-model="message" placeholder="请输入您的留言内容"></textarea>
+              <span>
+                留言
+                <span style="color: red;">*</span>
+              </span>
+              <textarea v-model="content" placeholder="请输入您的留言内容"></textarea>
             </li>
           </ul>
         </div>
-        <div class="submit">
+        <div class="submit" @click="submit">
           提交
         </div>
       </div>
@@ -31,18 +40,53 @@
 </template>
 
 <script>
+import {getParams} from "@/utils";
+
 export default {
+
   name: "consultPopup",
   data() {
     return {
       show: false,
       name: '',
-      phone: '',
-      message: '',
+      mobile: '',
+      content: '',
       message1: ''
     }
   },
-  methods: {},
+  methods: {
+
+    submit() {
+
+      let reg = /^1[3-9]\d{9}$/
+
+      if (!this.name) return this.$message({message: '请输入您的姓名',type: "error"})
+      // console.log( reg.test(this.mobile))
+      // console.log(!this.mobile)
+      if (!reg.test(this.mobile)) {
+
+        return this.$message({message: '请输入正确的手机号',type: "error"})
+      }
+      if (!this.content) return this.$message({message: '请输入您的留言内容',type: "error"})
+
+      this.$axios.post(`/search/leaveMessage?${getParams({
+        name: this.name,
+        mobile: this.mobile,
+        content: this.content
+      })}`,{}).then(res => {
+
+        this.$message({message: '提交成功',type: "success"})
+
+        this.name = ''
+        this.mobile = ''
+        this.content = ''
+        this.show = false
+      })
+
+    }
+
+
+  },
 
 }
 </script>

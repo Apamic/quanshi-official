@@ -33,4 +33,23 @@ const router = new VueRouter({
   routes
 })
 
+
+router.beforeEach(async (to, from, next) => {
+
+  let token = localStorage.getItem('token');
+  if (token) {
+    next();
+  } else {
+    //未登录情况下
+    let toPath = to.path;
+    if (toPath.indexOf('/personalCenter') != -1) {
+      // 未登录的情况下访问订单页，重定向到登录页，且将原本需要去的路径存储于地址栏的query参数中
+      next('/login?redirect=' + toPath);
+    } else {
+      next();
+    }
+  }
+})
+
+
 export default router
