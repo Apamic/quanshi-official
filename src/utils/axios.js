@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Loading, Message, MessageBox } from "element-ui"
+import router from "@/router";
 
 let baseURL = 'http://10.10.10.159:8088/'
 
@@ -44,6 +45,10 @@ axiosInstance.interceptors.response.use(
              // this.$message(`${response.data.msg}`)
              //return response.data
             return Promise.reject(response.data)
+         } else if (response.data.code == -2) {
+             Message({ message: response.data.msg, showClose: false, type: "error" })
+             router.push({name:'logIn'})
+             return Promise.reject(response.data)
          } else {
              return response.data
          }

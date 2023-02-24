@@ -14,7 +14,7 @@
     </p>
 
     <div class="image-wrap">
-
+<!--      <img src="../assets/hands.png" style="width: 400px;height: 300px;transform: translateY(-100px)">-->
 
     </div>
 
@@ -23,8 +23,8 @@
 
       <div class="swiper-wrap">
         <div v-for="(item,index) in 2" :key="index" class="flex flex-around item" :style="{transform: `translateX(-${current * 100}%)`}">
-          <div v-for="(items,indexs) in 4" :key="indexs">
-            <img style="width: 0.65rem;height: 0.58rem;" src="../assets/4.png">
+          <div v-for="(items,indexs) in 4" :key="indexs" @click.stop="">
+            <img style="width: 0.65rem;height: 0.58rem;" src="../assets/4.png" @click.stop="pitchOn(url)">
           </div>
         </div>
       </div>
@@ -79,6 +79,10 @@ export default {
 
         this.current --
       }
+    },
+
+    pitchOn(url) {
+
     }
   }
 

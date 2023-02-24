@@ -31,7 +31,7 @@
 
             <div class="time-wrap">
               <span class="time">2023年10月2日到期</span>
-              <span class="renew">续费</span>
+              <span class="renew" @click.stop="pay()">续费</span>
             </div>
           </div>
 
@@ -59,11 +59,14 @@
         </div>
       </div>
 
+      <paymentPopup ref="paymentPopup" :title="`续费`"></paymentPopup>
 
   </div>
 </template>
 
 <script>
+
+import paymentPopup from "@/components/paymentPopup";
 
 export default {
   name: "personalCenter",
@@ -91,7 +94,15 @@ export default {
   methods: {
     codeShow() {
       this.isScan = !this.isScan
+    },
+
+    pay() {
+      this.$refs.paymentPopup.show = true
     }
+  },
+
+  components: {
+    paymentPopup
   }
 }
 </script>
@@ -225,6 +236,7 @@ export default {
 
           .renew {
             color: #02A7A0;
+            cursor: pointer;
           }
         }
 

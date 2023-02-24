@@ -22,7 +22,7 @@
                     <div class="name">全视AI直播数字人</div>
                     <div class="desc">专业直播数字人 一站式营销解决方案</div>
                     <div class="btnVue">
-                      <div class="btn">
+                      <div class="btn" @click.stop="consultShow()">
                         <span>立即体验</span>
                         <img src="../assets/more.png" alt="">
                       </div>
@@ -211,7 +211,7 @@
                         <p>多种组合方式，服装、场景、玩法随意搭配</p>
                         <div class="flex-end">
                           <div class="btnVue">
-                            <div class="btn">
+                            <div class="btn" @click.stop="consultShow()">
                               <span>立即体验</span>
                               <img src="../assets/more.png">
                             </div>
@@ -400,7 +400,7 @@
         </p>
 
         <div class="an">
-          <div class="but1">
+          <div class="but1" @click.stop="consultShow()">
             <span>立即体验</span>
             <img src="../assets/more.png" alt="">
           </div>

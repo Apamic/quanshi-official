@@ -3,15 +3,15 @@
 
     <div class="popup-wrap">
       <div class="popup-head align-center flex-between">
-        <span>开通会员</span>
+        <span>{{title}}</span>
         <img class="close" src="../assets/popup/close.png" @click="show = !show">
       </div>
       <div class="content">
         <div class="card-wrap">
-          <div class="card">
-            <div>月卡</div>
+          <div class="card" :class="index == selectType ? 'active' : ''"  v-for="(item,index) in vipPrice" :key="item.key" @click.stop="selectType = index">
+            <div>{{item.name}}卡</div>
             <div style="text-align: center">
-              <span class="p1">￥</span><span class="p2">1299</span>
+              <span class="p1">￥</span><span class="p2">{{item.price}}</span>
             </div>
           </div>
         </div>
@@ -19,12 +19,12 @@
         <ul class="list-wrap">
           <li>
             <span class="label">选择方案</span>
-            <span style="color: #343434;">会员1个月</span>
+            <span style="color: #343434;">会员{{vipPrice[selectType].name}}卡</span>
           </li>
 
           <li>
             <span class="label">应付金额</span>
-            <span class="other" style="color: #02A7A0;">1299</span>
+            <span class="other" style="color: #02A7A0;">{{vipPrice[selectType].price}}</span>
           </li>
 
           <li>
@@ -53,7 +53,7 @@
 
         <div class="bottom-wrap">
 
-          <div class="pay-but">
+          <div class="pay-but" @click="buyVip()">
             立即支付
           </div>
 
@@ -73,16 +73,73 @@
 <script>
 export default {
   name: "paymentPopup",
+
+  props: {
+    title: {
+      type: String,
+      default: '开通会员'
+    }
+  },
+
   data() {
     return {
       show: false,
 
       select: 0,
+      selectType: 0,
 
     }
   },
 
-  methods: {}
+  mounted() {
+
+    this.getVipPrice()
+  },
+
+  methods: {
+    getVipPrice() {
+      this.$axios.post('/front/user/vipPrice').then(res => {
+        this.vipPrice = res.obj
+        //console.log(res)
+      })
+    },
+
+    buyVip() {
+
+      let type = this.vipPrice[this.selectType].key
+
+      this.$axios.post(`/front/user/buyVip?type=${type}`).then(res => {
+        console.log(res)
+
+        this.pay(res)
+
+      })
+    },
+
+
+    pay(data) {
+      let {select} = this
+      if (select == 0) {
+        this.$axios.post(`/front/aliPay/wapPay?orderId=${data.obj.id}`).then(res => {
+          // console.log(res)
+
+          // const div = document.createElement('div');
+          // div.innerHTML = res.data.form;
+          // document.body.appendChild(div);
+          // document.forms[0].submit();
+
+
+
+        })
+      }
+
+      if (select == 1) {
+
+      }
+    }
+
+
+  }
 
 }
 </script>
@@ -100,7 +157,7 @@ export default {
 }
 
 .popup-wrap {
-  width: 600px;
+  width: 680px;
   height: 700px;
   background: #fff;
   border-radius: 30px;
@@ -125,17 +182,21 @@ export default {
     padding: 40px;
 
     .card-wrap {
+      display: flex;
       margin-bottom: 20px;
-      overflow: hidden;
+      overflow-x: auto;
 
       .card {
+        flex: 0 0 184px;
+        margin-right: 20px;
         padding: 10px 20px;
         width: 184px;
         height: 123px;
         color: #fff;
         background: url("../assets/popup/card.png") no-repeat;
         background-size: 100% 100%;
-
+        transform: scale(0.9);
+        cursor: pointer;
         div:first-child {
           font-size: 20px;
         }
@@ -148,6 +209,11 @@ export default {
           font-size: 40px;
         }
 
+      }
+
+      .active {
+        transition: 0.5s;
+        transform: scale(1);
       }
     }
 
@@ -183,7 +249,7 @@ export default {
             width: 148px;
             height: 48px;
             border: 1px solid #B7B7B7;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             span {
               margin-left: 10px;
@@ -209,10 +275,16 @@ export default {
 
           .zfb-s {
             border: 1px solid rgb(0,168,240);
+            span {
+              color: rgb(0,168,241);
+            }
           }
 
           .vx-s {
             border: 1px solid rgb(28,171,67);
+            span {
+              color: rgb(28,171,67);
+            }
           }
 
         }
@@ -273,10 +345,12 @@ export default {
       padding: 0.2rem;
 
       .card-wrap {
+        display: flex;
         margin-bottom: 0.2rem;
-        overflow: hidden;
+        overflow-x: auto;
 
         .card {
+          flex: 0 0 0.92rem;
           padding: 0.1rem 0.2rem;
           width: 0.92rem;
           height: 0.61rem;
@@ -360,11 +434,16 @@ export default {
 
             .zfb-s {
               border: 1px solid rgb(0,168,240);
-
+              span {
+                color: rgb(0,168,241);
+              }
             }
 
             .vx-s {
               border: 1px solid rgb(28,171,67);
+              span {
+                color: rgb(28,171,67);
+              }
             }
 
           }
@@ -405,5 +484,7 @@ export default {
     opacity: 100%;
   }
 }
+
+::-webkit-scrollbar{display:none}
 
 </style>
