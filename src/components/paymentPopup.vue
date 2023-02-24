@@ -195,7 +195,8 @@ export default {
         color: #fff;
         background: url("../assets/popup/card.png") no-repeat;
         background-size: 100% 100%;
-        transform: scale(0.9);
+        transition: 0.5s;
+        transform: scale(0.95);
         cursor: pointer;
         div:first-child {
           font-size: 20px;
