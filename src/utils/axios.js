@@ -9,6 +9,7 @@ let loadingInstance = null
 const axiosInstance = axios.create()
 
 axiosInstance.defaults.baseURL = baseURL
+axiosInstance.defaults.timeout = 5000
 
 let token = ''
 
@@ -57,6 +58,11 @@ axiosInstance.interceptors.response.use(
      },
     error => {
         loadingInstance.close()
+
+        if (error.message.includes('timeout')) {
+            Message({ message: '请求服务器超时！', showClose: false, type: "error" })
+        }
+
         if (error.response) {
             // The request was made and the server responded with a status code that falls out of the range of 2xx
             console.log(`Status code is ${error.response.status}`);
