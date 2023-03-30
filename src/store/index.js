@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 const store = new Vuex.Store({
   state:{
-    isLogin: false, // 登录状态
+    isLogin: localStorage.getItem('live_token') ? true : false, // 登录状态
   },
   // 修改store中的值唯一的方法就是提交mutation来修改
   mutations:{
@@ -21,12 +21,12 @@ const store = new Vuex.Store({
 
     login(state,provider){
       state.isLogin = true
-      window.localStorage.setItem("live_token", provider)
+      localStorage.setItem("live_token", provider)
     },
 
     loginout(state){
       state.isLogin = false
-      uni.removeStorageSync("live_token")
+      localStorage.removeItem("live_token")
     },
   },
 })

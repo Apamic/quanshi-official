@@ -93,7 +93,7 @@ export default {
 
   mounted() {
 
-    this.getVipPrice()
+    //this.getVipPrice()
   },
 
   methods: {

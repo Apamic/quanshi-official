@@ -4,7 +4,8 @@
 <!--    <img src="../assets/logo_dark.png">-->
     <div class="right">
         <div class="code" @click="showCode = !showCode">扫码咨询</div>
-        <div class="login" @click="$router.push({name: 'logIn'})">登录/注册</div>
+        <div class="login" @click="$router.push({name: 'logIn'})" v-if="!isLogin">登录/注册</div>
+        <div class="user el-icon-user" style="margin-top: 7px; color: #fff;"  v-else></div>
 
         <img v-show="showCode" src="../assets/code.jpg" class="code-img">
 
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
 export default {
   name: "moreHeader",
   data() {
@@ -20,6 +22,11 @@ export default {
       showCode: false,
     }
 
+  },
+  computed: {
+    ...mapState({
+      isLogin: (state) => state.isLogin
+    }),
   },
   methods: {
 

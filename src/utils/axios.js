@@ -2,7 +2,7 @@ import axios from "axios"
 import { Loading, Message, MessageBox } from "element-ui"
 import router from "@/router";
 
-let baseURL = 'http://10.10.10.159:8088/'
+let baseURL = 'http://admin.chqskj.cn/'
 
 let loadingInstance = null
 
@@ -27,8 +27,8 @@ axiosInstance.interceptors.request.use(
             })
         }
 
-        if (localStorage.getItem('token') ) {
-            token = localStorage.getItem('token')
+        if (localStorage.getItem('live_token') ) {
+            token = localStorage.getItem('live_token')
             config.headers['token'] = token
         }
         return config;

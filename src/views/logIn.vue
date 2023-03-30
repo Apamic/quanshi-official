@@ -42,7 +42,7 @@
           </template>
 
 
-          <div class="login-but" @click="login()">
+          <div class="login-but" @click="onLogin()">
             注册 / 登录
           </div>
 
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex"
 export default {
   name: "logIn",
 
@@ -63,7 +64,7 @@ export default {
       code: '',
       password: '',
       isSend: false,
-      count: 30,
+      count: 60,
       time: null
     }
   },
@@ -75,6 +76,10 @@ export default {
 
   methods: {
 
+    ...mapMutations([
+        'login'
+    ]),
+
     onCountSeconds() {
       this.time = setInterval(() => {
         this.count--
@@ -83,7 +88,7 @@ export default {
           clearInterval(this.time)
           this.time = null
           this.isSend = false
-          this.count = 30
+          this.count = 60
         }
 
       },1000)
@@ -108,7 +113,7 @@ export default {
 
     },
 
-    login() {
+    onLogin() {
 
       if (!this.phone) {
         return this.$message.error('请输入正确的手机号！')
@@ -122,10 +127,13 @@ export default {
 
         console.log(res)
 
-        localStorage.setItem('token',res.obj.token)
+        this.login(res.obj.token)
 
-        this.$router.push({name: 'personalCenter'})
+        localStorage.setItem('userData',JSON.stringify(res.obj))
 
+        this.$message.success('登录成功！请点击按钮下载客户端！')
+        //this.$router.push({name: 'personalCenter'})
+        this.$router.push({name: 'home'})
         console.log('登录成功！')
       })
     }

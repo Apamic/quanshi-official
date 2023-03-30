@@ -25,14 +25,14 @@
           <div class="left">
             <img class="image" src="../assets/logo.jpg">
             <div class="grade">
-              <div class="phone">187****9999</div>
+              <div class="phone">{{user.name}}</div>
               <div class="level">黄金会员</div>
             </div>
 
-            <div class="time-wrap">
-              <span class="time">2023年10月2日到期</span>
-              <span class="renew" @click.stop="pay()">续费</span>
-            </div>
+<!--            <div class="time-wrap">-->
+<!--              <span class="time">2023年10月2日到期</span>-->
+<!--              <span class="renew" @click.stop="pay()">续费</span>-->
+<!--            </div>-->
           </div>
 
           <div class="right">
@@ -44,13 +44,13 @@
 
             <ul class="list-wrap" id="list">
 
-              <li v-for="(item,index) in 10" :key="index">
-                <div class="label">购买月卡</div>
-                <div>
-                  <div class="price"><span class="num">1299</span>元</div>
-                  <div class="time">2023-09-02 23：43</div>
-                </div>
-              </li>
+<!--              <li v-for="(item,index) in 10" :key="index">-->
+<!--                <div class="label">购买月卡</div>-->
+<!--                <div>-->
+<!--                  <div class="price"><span class="num">1299</span>元</div>-->
+<!--                  <div class="time">2023-09-02 23：43</div>-->
+<!--                </div>-->
+<!--              </li>-->
 
             </ul>
 
@@ -77,7 +77,8 @@ export default {
           '全部','今天','最近7天','最近30天'
       ],
       current: 0,
-      isScan: false
+      isScan: false,
+      user: {}
     }
   },
 
@@ -88,6 +89,9 @@ export default {
       list.style.height =  ((window.innerHeight - list.getBoundingClientRect().top)) + 'px'
       console.log(list.getBoundingClientRect())
     }
+
+
+    this.user = localStorage.getItem('userData')
 
   },
 

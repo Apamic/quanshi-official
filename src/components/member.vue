@@ -7,15 +7,15 @@
 
       <div class="card">
         <div class="price">
-          <div class="flex" style="align-items: baseline;border-bottom: 1px solid #02A7A0;">
-            <span>一口价</span>
-            <div style="position: relative; color: #02A7A0;">
-              ￥
-              <span style="font-size: 0.26rem;">1299</span>
-              /月
-              <img class="king" src="../assets/king.png" style="width: 0.17rem;height: 0.17rem;">
-            </div>
-          </div>
+<!--          <div class="flex" style="align-items: baseline;border-bottom: 1px solid #02A7A0;">-->
+<!--            <span>一口价</span>-->
+<!--            <div style="position: relative; color: #02A7A0;">-->
+<!--              ￥-->
+<!--              <span style="font-size: 0.26rem;">1299</span>-->
+<!--              /月-->
+<!--              <img class="king" src="../assets/king.png" style="width: 0.17rem;height: 0.17rem;">-->
+<!--            </div>-->
+<!--          </div>-->
 
           <img class="hands" src="../assets/hands.png" >
         </div>
@@ -34,10 +34,10 @@
           </div>
         </div>
 
-        <div class="but1" style="margin: 0.2rem auto 0;" @click.stop="payShow()">
-          <span>立即开通</span>
-          <img src="../assets/more.png">
-        </div>
+<!--        <div class="but1" style="margin: 0.2rem auto 0;" @click.stop="payShow()">-->
+<!--          <span>立即开通</span>-->
+<!--          <img src="../assets/more.png">-->
+<!--        </div>-->
 
       </div>
 

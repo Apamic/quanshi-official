@@ -10,6 +10,12 @@
         </div>
       </div>
       <div class="oprationVue">
+
+        <div class="but">
+          <a href="https://antavator.oss-cn-hangzhou.aliyuncs.com/szr/szr.exe">下载客户端</a>
+        </div>
+
+
         <div class="scan" @mouseover="isScan = true" @mouseleave="isScan = false">
           <img src="../assets/erweima.png" />
           <span>扫码咨询</span>
@@ -249,6 +255,22 @@ export default {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+
+.but {
+  margin-right: 20px;
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  text-align: center;
+  background: #02A7A0;
+  border-radius: 5px;
+  cursor: pointer;
+  a {
+    color: #fff;
+  }
 }
 </style>
 

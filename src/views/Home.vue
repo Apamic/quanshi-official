@@ -235,14 +235,14 @@
                     <div class="title">买全视数字科技会员·享专属特权</div>
                     <p>一键生成视频·人物素材丰富·海量场景资源·顶级配音神器</p>
                     <div class="box">
-                      <div class="priceVue">
-                        <span
-                            style="“font-size: 38px;font-weight: bold;color: #0C121D;padding-right: 20px;transform: translateY(8px);">一口价</span>
-                        <span>￥</span>
-                        <p>1299</p>
-                        <span>/月</span>
-                        <img src="../assets/king.png" alt="">
-                      </div>
+<!--                      <div class="priceVue">-->
+<!--                        <span-->
+<!--                            style="“font-size: 38px;font-weight: bold;color: #0C121D;padding-right: 20px;transform: translateY(8px);">一口价</span>-->
+<!--                        <span>￥</span>-->
+<!--                        <p>1299</p>-->
+<!--                        <span>/月</span>-->
+<!--                        <img src="../assets/king.png" alt="">-->
+<!--                      </div>-->
                       <div class="liVue">
                         <div class="li">
                           <img src="../assets/dot.png" alt="">
@@ -262,10 +262,10 @@
                         </div>
                       </div>
                       <div class="btnVue">
-                        <div class="btn" @click.stop="payShow()">
-                          <span>立即开通</span>
-                          <img src="../assets/more.png">
-                        </div>
+<!--                        <div class="btn" @click.stop="payShow()">-->
+<!--                          <span>立即开通</span>-->
+<!--                          <img src="../assets/more.png">-->
+<!--                        </div>-->
                       </div>
                       <img src="../assets/hands.png" class="hands">
                     </div>
