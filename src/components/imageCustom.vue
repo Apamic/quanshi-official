@@ -14,7 +14,7 @@
     </p>
 
     <div class="image-wrap">
-<!--      <img src="../assets/hands.png" style="width: 400px;height: 300px;transform: translateY(-100px)">-->
+      <img :src="`figure/bj${imgIndex + 1}.png`" style="width: 100%;height: 100%;">
 
     </div>
 
@@ -22,9 +22,9 @@
       <img style="margin-right: 0.1rem; width: 0.12rem;height: 0.21rem;" src="../assets/left.png" @click="arrowClick('prev')">
 
       <div class="swiper-wrap">
-        <div v-for="(item,index) in 2" :key="index" class="flex flex-around item" :style="{transform: `translateX(-${current * 100}%)`}">
-          <div v-for="(items,indexs) in 4" :key="indexs" @click.stop="">
-            <img style="width: 0.65rem;height: 0.58rem;" src="../assets/4.png" @click.stop="pitchOn(url)">
+        <div v-for="(item,index) in 1" :key="index" class="flex flex-around item" :style="{transform: `translateX(-${current * 100}%)`}">
+          <div v-for="(items,indexs) in listhImg" :key="indexs" >
+            <img style="width: 0.65rem;height: 0.58rem;" :src="items" @click.stop="imgIndex = indexs">
           </div>
         </div>
       </div>
@@ -42,7 +42,10 @@ export default {
   name: "imageCustom",
   data() {
     return {
-      current: 0
+      current: 0,
+      listImg: ['figure/bj1.png','figure/bj2.png','figure/bj3.png','figure/bj4.png'],
+      listhImg: ['figure/h1.png','figure/h2.png','figure/h3.png','figure/h4.png'],
+      imgIndex: 0
     }
   },
 
@@ -118,6 +121,7 @@ export default {
 
   .swiper-wrap {
     display: flex;
+    width: 100%;
     height: 0.58rem;
     //white-space: nowrap;
     overflow: hidden;

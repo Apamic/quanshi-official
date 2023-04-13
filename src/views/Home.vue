@@ -189,14 +189,16 @@
                     <div class="title">形象定制</div>
                     <div class="inner flex-between align-center">
                       <div class="innerLeft">
-                        <div class="vedioVue"></div>
+                        <div class="vedioVue">
+                          <img :src="`figure/bj${imgIndex + 1}.png`" style="width: 600px;height: 400px" />
+                        </div>
                         <div class="scrollVue flex-between align-center">
                           <img src="../assets/left.png" @click="arrowClick('prev')">
                           <el-carousel indicator-position="none" height="110px" :autoplay="false" class="elCarousel"
                                        ref="carouselCostom">
-                            <el-carousel-item v-for="item in 4" :key="item">
+                            <el-carousel-item v-for="item in 1" :key="item">
                               <div class="imgs flex-between">
-                                <img src="../assets/4.png" v-for="(item,index) in 4">
+                                <img :src="item" v-for="(item,index) in listhImg" :key="index" @click="imgIndex = index">
                               </div>
                             </el-carousel-item>
                           </el-carousel>
@@ -493,7 +495,12 @@ export default {
       swiperOption: {
         direction: 'vertical',
 
-      }
+      },
+
+      listImg: ['figure/bj1.png','figure/bj2.png','figure/bj3.png','figure/bj4.png'],
+      listhImg: ['figure/h1.png','figure/h2.png','figure/h3.png','figure/h4.png'],
+
+      imgIndex: 0
 
     }
   },
