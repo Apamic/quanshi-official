@@ -446,13 +446,11 @@
 
     </div>
 
-
     <paymentPopup ref="paymentPopup"></paymentPopup>
 
     <consultPopup ref="consultPopup"></consultPopup>
 
     <questionPopup ref="questionPopup"></questionPopup>
-
 
   </div>
 </template>
